@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spagybio — Homepage Idéale</title>
+<title>Spagybio — Élixirs Spagyriques Artisanaux</title>
+<meta name="description" content="Élixirs spagyriques fabriqués artisanalement en Auvergne depuis 1999 par Vincent Lauvergne. Plantes fraîches, bio, distillées selon un procédé alchimique centenaire.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* ─── DESIGN SYSTEM ─── */
 :root {
   --ink:       #1C1A14;
   --forest:    #2D4A2D;
@@ -24,1510 +24,519 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body {
-  background: var(--cream);
-  color: var(--ink);
-  font-family: var(--sans);
-  font-weight: 300;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
+body { background: var(--cream); color: var(--ink); font-family: var(--sans); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
 
-/* ─── ANNOTATION SYSTEM ─── */
-.anno {
-  position: absolute;
-  right: -230px;
-  width: 210px;
-  background: #FFF8E7;
-  border: 1px solid #E8D5B0;
-  border-radius: 6px;
-  padding: 10px 12px;
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 400;
-  color: #7A5C2A;
-  line-height: 1.5;
-  z-index: 20;
-}
-.anno::before {
-  content: '';
-  position: absolute;
-  left: -8px;
-  top: 14px;
-  width: 0; height: 0;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-  border-right: 8px solid #E8D5B0;
-}
-.anno strong { display: block; font-weight: 500; color: #5A3E1A; margin-bottom: 2px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
-.block-wrap { position: relative; }
+/* BANDEAU */
+.top-bar { background: var(--ink); color: var(--gold-lt); text-align: center; padding: 10px 24px; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; }
 
-/* ─── ANNOTATION LABELS ─── */
-.block-label {
-  position: absolute;
-  left: -168px;
-  width: 148px;
-  text-align: right;
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  color: var(--warm-gray);
-  top: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 6px;
-}
-.block-label::after {
-  content: '';
-  width: 24px;
-  height: 1px;
-  background: var(--border);
-  flex-shrink: 0;
-}
-.num-badge {
-  width: 20px; height: 20px;
-  border-radius: 50%;
-  background: var(--parchment);
-  border: 1px solid var(--border);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 9px;
-  font-weight: 500;
-  color: var(--warm-gray);
-  flex-shrink: 0;
-}
-
-/* ─── LAYOUT WRAPPER ─── */
-.page-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 200px 80px 200px;
-}
-.page-container {
-  background: var(--cream);
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  overflow: hidden;
-  box-shadow: 0 4px 40px rgba(28,26,20,0.08);
-}
-
-/* ─── INTRO BANNER ─── */
-.intro-banner {
-  background: var(--ink);
-  color: var(--gold-lt);
-  text-align: center;
-  padding: 10px 24px;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-weight: 400;
-}
-
-/* ═══════════════════════════════
-   BLOC 1 — NAVIGATION
-═══════════════════════════════ */
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 48px;
-  border-bottom: 1px solid var(--border);
-  background: var(--cream);
-  position: relative;
-}
-.nav-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.nav-logo-name {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--forest);
-  line-height: 1;
-}
-.nav-logo-tagline {
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--warm-gray);
-  margin-top: 3px;
-}
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-.nav-links a {
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--ink);
-  text-decoration: none;
-  opacity: 0.7;
-  transition: opacity 0.2s;
-}
+/* NAV */
+nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; border-bottom: 1px solid var(--border); background: var(--cream); }
+.nav-logo-name { font-family: var(--serif); font-size: 22px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--forest); line-height: 1; }
+.nav-logo-tagline { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--warm-gray); margin-top: 3px; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink); text-decoration: none; opacity: 0.7; transition: opacity 0.2s; }
 .nav-links a:hover { opacity: 1; }
-.nav-cta {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--forest);
-  background: transparent;
-  border: 1px solid var(--sage);
-  padding: 8px 20px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.2s;
-}
+.nav-cta { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--forest); background: transparent; border: 1px solid var(--sage); padding: 8px 20px; cursor: pointer; text-decoration: none; transition: all 0.2s; }
 .nav-cta:hover { background: var(--forest); color: var(--parchment); }
 
-/* ═══════════════════════════════
-   BLOC 2 — HERO
-═══════════════════════════════ */
-.hero {
-  min-height: 580px;
-  background: var(--forest);
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  overflow: hidden;
-}
-.hero-left {
-  padding: 80px 56px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-}
-.hero-eyebrow {
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--sage-lt);
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.hero-eyebrow::before {
-  content: '';
-  width: 30px;
-  height: 1px;
-  background: var(--sage-lt);
-}
-.hero-headline {
-  font-family: var(--serif);
-  font-size: 52px;
-  font-weight: 300;
-  line-height: 1.1;
-  color: var(--parchment);
-  margin-bottom: 24px;
-}
-.hero-headline em {
-  font-style: italic;
-  color: var(--gold-lt);
-}
-.hero-body {
-  font-size: 14px;
-  color: rgba(245,240,232,0.7);
-  line-height: 1.8;
-  max-width: 340px;
-  margin-bottom: 40px;
-}
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.btn-primary {
-  background: var(--gold);
-  color: var(--ink);
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 500;
-  padding: 14px 28px;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-}
-.btn-ghost {
-  color: var(--parchment);
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-decoration: none;
-  opacity: 0.7;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+/* HERO */
+.hero { min-height: 580px; background: var(--forest); display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+.hero-left { padding: 80px 56px; display: flex; flex-direction: column; justify-content: center; }
+.hero-eyebrow { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage-lt); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.hero-eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--sage-lt); }
+.hero-headline { font-family: var(--serif); font-size: 52px; font-weight: 300; line-height: 1.1; color: var(--parchment); margin-bottom: 24px; }
+.hero-headline em { font-style: italic; color: var(--gold-lt); }
+.hero-body { font-size: 14px; color: rgba(245,240,232,0.7); line-height: 1.8; max-width: 340px; margin-bottom: 40px; }
+.hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.btn-primary { background: var(--gold); color: var(--ink); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 14px 28px; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+.btn-ghost { color: var(--parchment); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; opacity: 0.7; display: flex; align-items: center; gap: 8px; }
 .btn-ghost::after { content: '→'; font-size: 14px; }
-.hero-right {
-  position: relative;
-  overflow: hidden;
-}
-.hero-image-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #1e3320 0%, #2D4A2D 40%, #3d6040 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero-bottle-silhouette {
-  width: 160px;
-  opacity: 0.25;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-}
-.bottle-cap { width: 30px; height: 18px; background: var(--gold-lt); border-radius: 4px 4px 0 0; }
-.bottle-neck { width: 22px; height: 40px; background: rgba(245,240,232,0.6); }
-.bottle-shoulder { width: 22px; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; border-top: 20px solid rgba(245,240,232,0.6); }
-.bottle-body { width: 62px; height: 140px; background: rgba(245,240,232,0.4); border-radius: 0 0 8px 8px; }
-.hero-label-overlay {
-  position: absolute;
-  bottom: 32px;
-  left: 32px;
-  right: 32px;
-  background: rgba(28,26,20,0.6);
-  backdrop-filter: blur(4px);
-  padding: 16px 20px;
-  border-left: 2px solid var(--gold);
-}
-.hero-label-text {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 14px;
-  color: var(--parchment);
-  line-height: 1.5;
-}
-.hero-label-author {
-  font-size: 10px;
-  color: var(--gold-lt);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-top: 6px;
-}
-.hero-deco {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: radial-gradient(circle at 80% 20%, rgba(107,140,94,0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
+.hero-right { position: relative; overflow: hidden; }
+.hero-img-ph { width: 100%; height: 100%; min-height: 580px; object-fit: cover; object-position: top center; display: block; }
 
-/* ═══════════════════════════════
-   BLOC 3 — MANIFESTE / INTRO BRAND
-═══════════════════════════════ */
-.manifeste {
-  padding: 80px 80px;
-  background: var(--parchment);
-  text-align: center;
-  border-bottom: 1px solid var(--border);
-  position: relative;
-}
-.manifeste-kicker {
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--sage);
-  margin-bottom: 24px;
-}
-.manifeste-quote {
-  font-family: var(--serif);
-  font-size: 32px;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--forest);
-  line-height: 1.4;
-  max-width: 600px;
-  margin: 0 auto 24px;
-}
-.manifeste-body {
-  font-size: 14px;
-  color: var(--warm-gray);
-  line-height: 1.9;
-  max-width: 520px;
-  margin: 0 auto 40px;
-}
-.manifeste-signature {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
-.sig-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--sage);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--serif);
-  font-size: 18px;
-  font-style: italic;
-  color: var(--parchment);
-}
-.sig-text { text-align: left; }
+/* MANIFESTE */
+.manifeste { padding: 80px; background: var(--parchment); text-align: center; border-bottom: 1px solid var(--border); }
+.kicker { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage); margin-bottom: 20px; }
+.manifeste-quote { font-family: var(--serif); font-size: 32px; font-weight: 300; font-style: italic; color: var(--forest); line-height: 1.4; max-width: 600px; margin: 0 auto 24px; }
+.manifeste-body { font-size: 14px; color: var(--warm-gray); line-height: 1.9; max-width: 520px; margin: 0 auto 40px; }
+.manifeste-signature { display: flex; align-items: center; justify-content: center; gap: 16px; }
+.sig-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--sage); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 18px; font-style: italic; color: var(--parchment); }
 .sig-name { font-family: var(--serif); font-size: 16px; font-style: italic; color: var(--forest); }
 .sig-role { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--warm-gray); }
 
-/* ═══════════════════════════════
-   BLOC 4 — QUIZ BILAN (LEAD GEN)
-═══════════════════════════════ */
-.quiz-section {
-  background: var(--forest);
-  padding: 72px 80px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-.quiz-left .section-kicker {
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--sage-lt);
-  margin-bottom: 20px;
-}
-.quiz-left h2 {
-  font-family: var(--serif);
-  font-size: 38px;
-  font-weight: 300;
-  color: var(--parchment);
-  line-height: 1.2;
-  margin-bottom: 16px;
-}
-.quiz-left p {
-  font-size: 13px;
-  color: rgba(245,240,232,0.65);
-  line-height: 1.8;
-  margin-bottom: 28px;
-}
-.quiz-card {
-  background: var(--parchment);
-  padding: 32px;
-  border-radius: 2px;
-}
-.quiz-progress {
-  height: 2px;
-  background: var(--border);
-  margin-bottom: 28px;
-  border-radius: 1px;
-}
-.quiz-progress-fill {
-  width: 40%;
-  height: 100%;
-  background: var(--gold);
-  border-radius: 1px;
-}
-.quiz-question {
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--forest);
-  margin-bottom: 20px;
-  line-height: 1.3;
-}
-.quiz-options {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 24px;
-}
-.quiz-option {
-  padding: 10px 14px;
-  border: 1px solid var(--border);
-  background: white;
-  font-size: 12px;
-  color: var(--ink);
-  cursor: pointer;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: border-color 0.2s;
-}
-.quiz-option.selected {
-  border-color: var(--sage);
-  background: rgba(107,140,94,0.06);
-}
-.quiz-dot {
-  width: 14px; height: 14px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  flex-shrink: 0;
-}
-.quiz-option.selected .quiz-dot {
-  background: var(--sage);
-  border-color: var(--sage);
-}
-.quiz-step {
-  font-size: 10px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--warm-gray);
-  text-align: center;
-}
+/* QUIZ */
+.quiz-section { background: var(--forest); padding: 72px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.quiz-kicker { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage-lt); margin-bottom: 20px; }
+.quiz-section h2 { font-family: var(--serif); font-size: 38px; font-weight: 300; color: var(--parchment); line-height: 1.2; margin-bottom: 16px; }
+.quiz-section p { font-size: 13px; color: rgba(245,240,232,0.65); line-height: 1.8; margin-bottom: 28px; }
+.quiz-checks { display: flex; gap: 20px; flex-wrap: wrap; }
+.quiz-check { display: flex; align-items: center; gap: 8px; }
+.quiz-check-dot { width: 22px; height: 22px; border-radius: 50%; background: rgba(168,196,154,0.2); display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--sage-lt); }
+.quiz-check-label { font-size: 12px; color: rgba(245,240,232,0.6); }
+.quiz-card { background: var(--parchment); padding: 32px; border-radius: 2px; }
+.quiz-progress { height: 2px; background: var(--border); margin-bottom: 8px; border-radius: 1px; }
+.quiz-progress-fill { width: 40%; height: 100%; background: var(--gold); border-radius: 1px; }
+.quiz-step-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 20px; }
+.quiz-question { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--forest); margin-bottom: 20px; line-height: 1.3; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+.quiz-option { padding: 10px 14px; border: 1px solid var(--border); background: white; font-size: 12px; color: var(--ink); cursor: pointer; display: flex; align-items: center; gap: 10px; transition: border-color 0.2s; }
+.quiz-option.selected { border-color: var(--sage); background: rgba(107,140,94,0.06); }
+.quiz-dot { width: 14px; height: 14px; border-radius: 50%; border: 1px solid var(--border); flex-shrink: 0; }
+.quiz-option.selected .quiz-dot { background: var(--sage); border-color: var(--sage); }
+.quiz-btn { width: 100%; padding: 12px; background: var(--forest); color: var(--parchment); border: none; font-family: var(--sans); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; }
+.quiz-dots { font-size: 10px; color: var(--warm-gray); text-align: center; margin-top: 12px; }
 
-/* ═══════════════════════════════
-   BLOC 5 — MAGAZINE (ARTICLES)
-═══════════════════════════════ */
-.magazine {
-  padding: 80px 48px;
-  background: var(--cream);
-}
-.section-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 40px;
-}
-.section-header-left .kicker {
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--sage);
-  margin-bottom: 10px;
-}
-.section-header-left h2 {
-  font-family: var(--serif);
-  font-size: 36px;
-  font-weight: 300;
-  color: var(--forest);
-  line-height: 1.2;
-}
-.section-header-right a {
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--warm-gray);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.section-header-right a::after { content: '→'; }
-.mag-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 2px;
-}
-.article-card {
-  position: relative;
-  background: var(--parchment);
-  overflow: hidden;
-  cursor: pointer;
-}
+/* MAGAZINE */
+.magazine { padding: 80px 48px; background: var(--cream); }
+.section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 40px; }
+.section-header h2 { font-family: var(--serif); font-size: 36px; font-weight: 300; color: var(--forest); line-height: 1.2; margin-top: 8px; }
+.link-more { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--warm-gray); text-decoration: none; }
+.link-more::after { content: ' →'; }
+.mag-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2px; }
+.article-card { background: var(--parchment); overflow: hidden; cursor: pointer; position: relative; }
 .article-card.featured { grid-row: span 2; }
-.article-img {
-  width: 100%;
-  aspect-ratio: 3/2;
-  object-fit: cover;
-  display: block;
-}
-.article-img-placeholder {
-  width: 100%;
-  aspect-ratio: 4/3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
-}
-.article-card.featured .article-img-placeholder {
-  aspect-ratio: 3/4;
-  background: linear-gradient(160deg, #3d5f3a 0%, #2D4A2D 100%);
-}
-.article-img-placeholder.art2 { background: linear-gradient(135deg, #5a7a4a 0%, #3d5830 100%); aspect-ratio: 4/3; }
-.article-img-placeholder.art3 { background: linear-gradient(135deg, #6b5c3a 0%, #4a3f28 100%); aspect-ratio: 4/3; }
+.art-ph { width: 100%; display: flex; align-items: center; justify-content: center; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
 .article-body { padding: 20px 24px; }
-.article-tag {
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--sage);
-  margin-bottom: 8px;
-}
-.article-title {
-  font-family: var(--serif);
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--forest);
-  line-height: 1.35;
-  margin-bottom: 8px;
-}
-.article-card:not(.featured) .article-title { font-size: 15px; }
-.article-excerpt {
-  font-size: 12px;
-  color: var(--warm-gray);
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-.article-meta {
-  font-size: 10px;
-  color: var(--warm-gray);
-  letter-spacing: 0.5px;
-  display: flex;
-  gap: 12px;
-}
-.article-link {
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--forest);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+.article-body-sm { padding: 14px 18px; }
+.article-tag { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin-bottom: 8px; }
+.article-title { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--forest); line-height: 1.35; margin-bottom: 8px; }
+.article-title-sm { font-size: 15px; }
+.article-excerpt { font-size: 12px; color: var(--warm-gray); line-height: 1.6; margin-bottom: 12px; }
+.article-meta { font-size: 10px; color: var(--warm-gray); display: flex; gap: 8px; }
+.article-link { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--forest); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; }
 .article-link::after { content: '→'; }
-/* Taboola badge */
-.taboola-badge {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: var(--gold);
-  color: var(--ink);
-  font-size: 8px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-weight: 500;
-  padding: 3px 8px;
-}
+.badge { position: absolute; top: 12px; right: 12px; background: var(--gold); color: var(--ink); font-size: 8px; letter-spacing: 1px; text-transform: uppercase; font-weight: 500; padding: 3px 8px; }
 
-/* ═══════════════════════════════
-   BLOC 6 — LA SPAGYRIE (ÉDUCATIF)
-═══════════════════════════════ */
-.spagyrie-section {
-  padding: 80px 48px;
-  background: var(--parchment);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.spagyrie-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-.spagyrie-text .kicker {
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--sage);
-  margin-bottom: 16px;
-}
-.spagyrie-text h2 {
-  font-family: var(--serif);
-  font-size: 38px;
-  font-weight: 300;
-  color: var(--forest);
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-.spagyrie-text p {
-  font-size: 13px;
-  color: var(--warm-gray);
-  line-height: 1.9;
-  margin-bottom: 16px;
-}
-.process-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.process-step {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 16px;
-  background: var(--cream);
-  border-left: 2px solid transparent;
-  transition: border-color 0.2s;
-}
+/* SPAGYRIE */
+.spagyrie-section { padding: 80px 48px; background: var(--parchment); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.spagyrie-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.spagyrie-text h2 { font-family: var(--serif); font-size: 38px; font-weight: 300; color: var(--forest); line-height: 1.2; margin-bottom: 20px; margin-top: 14px; }
+.spagyrie-text p { font-size: 13px; color: var(--warm-gray); line-height: 1.9; margin-bottom: 16px; }
+.link-forest { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--forest); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; }
+.link-forest::after { content: '→'; }
+.process-steps { display: flex; flex-direction: column; gap: 2px; }
+.process-step { display: flex; align-items: flex-start; gap: 16px; padding: 16px; background: var(--cream); border-left: 2px solid transparent; transition: border-color 0.2s; }
 .process-step:hover { border-color: var(--sage); }
-.step-num {
-  font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--gold);
-  line-height: 1;
-  min-width: 28px;
-}
-.step-content {}
-.step-name {
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--forest);
-  margin-bottom: 3px;
-}
+.step-num { font-family: var(--serif); font-size: 28px; font-weight: 300; font-style: italic; color: var(--gold); line-height: 1; min-width: 28px; }
+.step-name { font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--forest); margin-bottom: 3px; }
 .step-desc { font-size: 12px; color: var(--warm-gray); line-height: 1.5; }
 
-/* ═══════════════════════════════
-   BLOC 7 — ÉLIXIRS (APERÇU DISCRET)
-═══════════════════════════════ */
-.elixirs-section {
-  padding: 80px 48px;
-  background: var(--cream);
-}
-.elixirs-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
-  margin-top: 40px;
-}
-.elixir-card {
-  background: var(--parchment);
-  padding: 28px 24px;
-  text-align: center;
-  border: 1px solid var(--border);
-  cursor: pointer;
-  transition: border-color 0.2s, transform 0.2s;
-  position: relative;
-}
+/* ÉLIXIRS */
+.elixirs-section { padding: 80px 48px; background: var(--cream); }
+.elixirs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 40px; }
+.elixir-card { background: var(--parchment); padding: 28px 24px; text-align: center; border: 1px solid var(--border); cursor: pointer; transition: border-color 0.2s, transform 0.2s; }
 .elixir-card:hover { border-color: var(--sage); transform: translateY(-2px); }
-.elixir-icon {
-  width: 48px;
-  height: 80px;
-  margin: 0 auto 16px;
-  position: relative;
-}
-.elixir-bottle {
-  width: 28px;
-  height: 60px;
-  background: var(--forest);
-  border-radius: 3px 3px 8px 8px;
-  margin: 0 auto;
-  position: relative;
-  opacity: 0.7;
-}
-.elixir-bottle::before {
-  content: '';
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 14px;
-  height: 14px;
-  background: var(--forest);
-  border-radius: 3px 3px 0 0;
-  opacity: 0.9;
-}
-.elixir-bottle.gold { background: var(--gold); }
-.elixir-bottle.sage { background: var(--sage); }
-.elixir-bottle.ink { background: var(--ink); }
-.elixir-category {
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--sage);
-  margin-bottom: 6px;
-}
-.elixir-name {
-  font-family: var(--serif);
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--forest);
-  margin-bottom: 8px;
-}
-.elixir-desc {
-  font-size: 11px;
-  color: var(--warm-gray);
-  line-height: 1.5;
-}
-.elixirs-cta {
-  text-align: center;
-  margin-top: 40px;
-}
+.elixir-bottle-ico { width: 28px; height: 60px; border-radius: 3px 3px 8px 8px; margin: 0 auto 16px; position: relative; }
+.elixir-bottle-ico::before { content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; background: inherit; border-radius: 3px 3px 0 0; }
+.elixir-category { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin-bottom: 6px; }
+.elixir-name { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--forest); margin-bottom: 8px; }
+.elixir-desc { font-size: 11px; color: var(--warm-gray); line-height: 1.5; }
+.elixirs-cta { text-align: center; margin-top: 40px; }
+.elixirs-cta a { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--forest); text-decoration: none; border: 1px solid var(--sage); padding: 12px 24px; display: inline-flex; align-items: center; gap: 8px; }
+.elixirs-cta p { font-size: 11px; color: var(--warm-gray); margin-top: 10px; }
 
-/* ═══════════════════════════════
-   BLOC 8 — TÉMOIGNAGES
-═══════════════════════════════ */
-.testimonials {
-  background: var(--forest);
-  padding: 80px 48px;
-}
-.testi-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-top: 48px;
-}
-.testi-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 28px;
-}
-.testi-stars {
-  display: flex;
-  gap: 3px;
-  margin-bottom: 16px;
-}
-.star { color: var(--gold); font-size: 12px; }
-.testi-quote {
-  font-family: var(--serif);
-  font-size: 16px;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--parchment);
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-.testi-author {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.testi-avatar {
-  width: 32px; height: 32px;
-  border-radius: 50%;
-  background: var(--sage);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--serif);
-  font-size: 14px;
-  font-style: italic;
-  color: var(--parchment);
-}
-.testi-name { font-size: 12px; font-weight: 400; color: var(--gold-lt); }
+/* TÉMOIGNAGES */
+.testimonials { background: var(--forest); padding: 80px 48px; }
+.testi-header { text-align: center; margin-bottom: 48px; }
+.testi-header .kicker { color: var(--sage-lt); }
+.testi-title { font-family: var(--serif); font-size: 36px; font-weight: 300; color: var(--parchment); line-height: 1.2; }
+.testi-title em { color: var(--gold-lt); }
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-bottom: 32px; }
+.testi-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 28px; }
+.testi-stars { color: var(--gold); font-size: 12px; margin-bottom: 16px; }
+.testi-quote { font-family: var(--serif); font-size: 16px; font-style: italic; font-weight: 300; color: var(--parchment); line-height: 1.6; margin-bottom: 20px; }
+.testi-author { display: flex; align-items: center; gap: 10px; }
+.testi-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--sage); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 14px; font-style: italic; color: var(--parchment); }
+.testi-name { font-size: 12px; color: var(--gold-lt); }
 .testi-product { font-size: 10px; color: var(--sage-lt); letter-spacing: 1px; }
+.testi-more { text-align: center; }
+.testi-more a { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage-lt); text-decoration: none; }
+.testi-more a::after { content: ' →'; }
 
-/* ═══════════════════════════════
-   BLOC 9 — PRESSE / CONFIANCE
-═══════════════════════════════ */
-.press-bar {
-  background: var(--parchment);
-  padding: 32px 80px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 48px;
-}
-.press-label {
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--warm-gray);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.press-logos {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  flex: 1;
-}
-.press-logo {
-  font-family: var(--serif);
-  font-size: 18px;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--warm-gray);
-  opacity: 0.55;
-  letter-spacing: 1px;
-}
+/* PRESSE */
+.press-bar { background: var(--parchment); padding: 32px 80px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 48px; }
+.press-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--warm-gray); white-space: nowrap; flex-shrink: 0; }
+.press-logos { display: flex; gap: 40px; align-items: center; flex: 1; }
+.press-logo { font-family: var(--serif); font-size: 18px; font-weight: 300; font-style: italic; color: var(--warm-gray); opacity: 0.55; }
 
-/* ═══════════════════════════════
-   BLOC 10 — NEWSLETTER
-═══════════════════════════════ */
-.newsletter {
-  padding: 80px 48px;
-  background: var(--cream);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  border-top: 1px solid var(--border);
-}
-.newsletter-left .kicker {
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--sage);
-  margin-bottom: 16px;
-}
-.newsletter-left h2 {
-  font-family: var(--serif);
-  font-size: 36px;
-  font-weight: 300;
-  color: var(--forest);
-  line-height: 1.2;
-  margin-bottom: 16px;
-}
-.newsletter-left p {
-  font-size: 13px;
-  color: var(--warm-gray);
-  line-height: 1.8;
-}
-.newsletter-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.newsletter-form input {
-  padding: 14px 16px;
-  border: 1px solid var(--border);
-  background: white;
-  font-family: var(--sans);
-  font-size: 13px;
-  color: var(--ink);
-  outline: none;
-  transition: border-color 0.2s;
-}
-.newsletter-form input:focus { border-color: var(--sage); }
-.newsletter-form input::placeholder { color: var(--warm-gray); }
-.newsletter-lead {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--parchment);
-  border: 1px solid var(--border);
-  padding: 14px 16px;
-  cursor: pointer;
-}
-.lead-icon {
-  width: 32px; height: 32px;
-  background: var(--forest);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--serif);
-  font-size: 14px;
-  font-style: italic;
-  color: var(--parchment);
-  flex-shrink: 0;
-}
+/* NEWSLETTER */
+.newsletter { padding: 80px 48px; background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; border-top: 1px solid var(--border); }
+.newsletter-left h2 { font-family: var(--serif); font-size: 36px; font-weight: 300; color: var(--forest); line-height: 1.2; margin-bottom: 16px; margin-top: 14px; }
+.newsletter-left p { font-size: 13px; color: var(--warm-gray); line-height: 1.8; }
+.newsletter-gift { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(28,26,20,0.1); }
+.newsletter-gift-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 8px; }
+.newsletter-gift-title { font-family: var(--serif); font-size: 18px; font-style: italic; color: var(--forest); }
+.newsletter-gift-sub { font-size: 11px; color: var(--warm-gray); margin-top: 4px; }
+.newsletter-form { display: flex; flex-direction: column; gap: 12px; }
+.newsletter-lead { display: flex; align-items: center; gap: 12px; background: var(--parchment); border: 1px solid var(--border); padding: 14px 16px; }
+.lead-icon { width: 32px; height: 32px; background: var(--forest); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 14px; font-style: italic; color: var(--parchment); flex-shrink: 0; }
 .lead-text { font-size: 12px; color: var(--forest); font-weight: 400; }
 .lead-sub { font-size: 10px; color: var(--warm-gray); }
-.newsletter-form button {
-  padding: 14px;
-  background: var(--forest);
-  color: var(--parchment);
-  border: none;
-  font-family: var(--sans);
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s;
-}
+.newsletter-form input { padding: 14px 16px; border: 1px solid var(--border); background: white; font-family: var(--sans); font-size: 13px; color: var(--ink); outline: none; transition: border-color 0.2s; }
+.newsletter-form input:focus { border-color: var(--sage); }
+.newsletter-form input::placeholder { color: var(--warm-gray); }
+.newsletter-form button { padding: 14px; background: var(--forest); color: var(--parchment); border: none; font-family: var(--sans); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; cursor: pointer; transition: background 0.2s; }
 .newsletter-form button:hover { background: var(--gold); color: var(--ink); }
-.newsletter-legal {
-  font-size: 10px;
-  color: var(--warm-gray);
-  line-height: 1.5;
-}
+.newsletter-legal { font-size: 10px; color: var(--warm-gray); line-height: 1.5; }
 
-/* ═══════════════════════════════
-   BLOC 11 — FOOTER
-═══════════════════════════════ */
-footer {
-  background: var(--ink);
-  padding: 60px 48px 32px;
-}
-.footer-top {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 48px;
-}
-.footer-brand-name {
-  font-family: var(--serif);
-  font-size: 26px;
-  font-weight: 300;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--parchment);
-  margin-bottom: 12px;
-}
-.footer-brand-desc {
-  font-size: 12px;
-  color: rgba(245,240,232,0.45);
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-.footer-col-title {
-  font-size: 9px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--warm-gray);
-  margin-bottom: 16px;
-}
+/* FOOTER */
+footer { background: var(--ink); padding: 60px 48px 32px; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+.footer-brand-name { font-family: var(--serif); font-size: 26px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; color: var(--parchment); margin-bottom: 12px; }
+.footer-brand-desc { font-size: 12px; color: rgba(245,240,232,0.45); line-height: 1.7; margin-bottom: 20px; }
+.footer-certifs { display: flex; gap: 8px; }
+.certif { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--sage-lt); border: 1px solid rgba(168,196,154,0.3); padding: 3px 8px; }
+.footer-col-title { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 16px; }
 .footer-links { list-style: none; }
 .footer-links li { margin-bottom: 8px; }
-.footer-links a {
-  font-size: 12px;
-  color: rgba(245,240,232,0.45);
-  text-decoration: none;
-  transition: color 0.2s;
-}
+.footer-links a { font-size: 12px; color: rgba(245,240,232,0.45); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--parchment); }
-.footer-bottom {
-  padding-top: 24px;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.footer-legal { font-size: 10px; color: rgba(245,240,232,0.3); }
-.footer-certifs { display: flex; gap: 16px; }
-.certif {
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: rgba(245,240,232,0.25);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 3px 8px;
-}
-
-/* ─── HIGHLIGHT OVERLAYS pour annotations ─── */
-.highlight-border {
-  outline: 2px dashed rgba(184,149,90,0.4);
-  outline-offset: -2px;
-}
+.footer-bottom { padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; }
+.footer-legal { font-size: 10px; color: rgba(245,240,232,0.25); }
+.footer-social { display: flex; gap: 16px; }
+.footer-social a { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: rgba(245,240,232,0.25); text-decoration: none; transition: color 0.2s; }
+.footer-social a:hover { color: rgba(245,240,232,0.6); }
 </style>
 </head>
 <body>
 
-<div style="background:#1C1A14;padding:12px 24px;text-align:center;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.08);">
-  <span style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#E8D5B0;">Maquette homepage idéale — Spagybio nouveau site</span>
-  <span style="font-size:10px;color:rgba(232,213,176,0.4);margin-left:16px;">Scrollez pour voir tous les blocs</span>
+<div class="top-bar">Élixirs spagyriques · Fabriqués artisanalement en Auvergne depuis 1999 · Livraison offerte dès 60€</div>
+
+<nav>
+  <div>
+    <div class="nav-logo-name">Spagybio</div>
+    <div class="nav-logo-tagline">Élixirs Spagyriques</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">La Spagyrie</a></li>
+    <li><a href="#">Nos Élixirs</a></li>
+    <li><a href="#">Le Magazine</a></li>
+    <li><a href="#">Formations</a></li>
+  </ul>
+  <a href="#bilan" class="nav-cta">Mon Bilan Bien-Être</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Depuis 1999 · Auvergne</div>
+    <h1 class="hero-headline">L'art ancien de<br>retrouver<br><em>l'équilibre</em></h1>
+    <p class="hero-body">Des élixirs fabriqués à partir de plantes fraîches cueillies en Auvergne, selon un procédé alchimique vieux de 500 ans. La nature entière, dans chaque flacon.</p>
+    <div class="hero-actions">
+      <a href="#bilan" class="btn-primary">Découvrir mon élixir →</a>
+      <a href="#" class="btn-ghost">Notre histoire</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <picture>
+      <source srcset="images/geranium-robert.webp" type="image/webp" width="700" height="1050">
+      <img
+        src="images/geranium-robert.jpg"
+        alt="Planche botanique du Géranium Robert (Geranium Robertianum) — illustration médiévale annotée présentant les vertus médicinales de cette plante spagyrique : circulation, digestion, cicatrisation, purification du sang"
+        title="Géranium Robert — Plante médicinale spagyrique utilisée par Spagybio depuis 1999"
+        width="700"
+        height="1050"
+        loading="eager"
+        fetchpriority="high"
+        class="hero-img-ph"
+      >
+    </picture>
+    <div class="hero-quote">
+      <div class="hero-quote-text">"Nous croyons que chaque plante contient en elle la meilleure façon de se porter à bien. À condition de savoir l'écouter."</div>
+      <div class="hero-quote-author">Vincent Lauvergne · Co-fondateur</div>
+    </div>
+  </div>
+</section>
+
+<section class="manifeste">
+  <div class="kicker">Notre philosophie</div>
+  <div class="manifeste-quote">"La plante entière, rien que la plante"</div>
+  <p class="manifeste-body">La spagyrie ne cherche pas à remplacer la médecine. Elle cherche à réveiller ce que le corps sait déjà faire : retrouver son équilibre. C'est ce que nous faisons depuis 25 ans, au cœur de l'Auvergne, avec des plantes fraîches, de l'alcool de vigne, et un savoir-faire transmis de génération en génération.</p>
+  <div class="manifeste-signature">
+    <div class="sig-avatar">V</div>
+    <div>
+      <div class="sig-name">Vincent Lauvergne</div>
+      <div class="sig-role">Co-fondateur · Herboriste spagyrique</div>
+    </div>
+  </div>
+</section>
+
+<section class="quiz-section" id="bilan">
+  <div>
+    <div class="quiz-kicker">Votre bilan bien-être</div>
+    <h2>Quel élixir est fait pour vous ?</h2>
+    <p>En 5 questions, nous identifions les déséquilibres qui vous concernent et vous recommandons l'élixir le plus adapté à votre situation. Résultat immédiat, sans engagement.</p>
+    <div class="quiz-checks">
+      <div class="quiz-check"><div class="quiz-check-dot">✓</div><span class="quiz-check-label">5 questions seulement</span></div>
+      <div class="quiz-check"><div class="quiz-check-dot">✓</div><span class="quiz-check-label">Résultat personnalisé</span></div>
+      <div class="quiz-check"><div class="quiz-check-dot">✓</div><span class="quiz-check-label">Guide offert par email</span></div>
+    </div>
+  </div>
+  <div class="quiz-card">
+    <div class="quiz-progress"><div class="quiz-progress-fill"></div></div>
+    <div class="quiz-step-label">Question 2 sur 5</div>
+    <div class="quiz-question">Quel symptôme vous impacte le plus au quotidien ?</div>
+    <div class="quiz-options">
+      <div class="quiz-option"><div class="quiz-dot"></div>Fatigue persistante, manque d'énergie</div>
+      <div class="quiz-option selected"><div class="quiz-dot"></div>Difficultés à m'endormir ou sommeil léger</div>
+      <div class="quiz-option"><div class="quiz-dot"></div>Digestion lourde, ballonnements</div>
+      <div class="quiz-option"><div class="quiz-dot"></div>Anxiété, stress difficile à gérer</div>
+    </div>
+    <button class="quiz-btn">Question suivante →</button>
+    <div class="quiz-dots">● ● ○ ○ ○</div>
+  </div>
+</section>
+
+<section class="magazine">
+  <div class="section-header">
+    <div>
+      <div class="kicker">Le magazine</div>
+      <h2>Savoirs, plantes<br>&amp; bien-être naturel</h2>
+    </div>
+    <a href="#" class="link-more">Tous les articles</a>
+  </div>
+  <div class="mag-grid">
+    <div class="article-card featured">
+      <div class="art-ph" style="background:linear-gradient(160deg,#3d5f3a,#2D4A2D);min-height:260px;">Photo · Microbiote intestinal</div>
+      <div class="badge">Article vedette</div>
+      <div class="article-body">
+        <div class="article-tag">Conseils santé</div>
+        <div class="article-title">Fatigue persistante : 5 causes digestives méconnues et leurs solutions naturelles</div>
+        <div class="article-excerpt">Vous vous réveillez fatigué malgré une nuit correcte ? La réponse se trouve peut-être dans votre intestin, pas dans votre rythme de vie.</div>
+        <div class="article-meta"><span>18 mars 2026</span><span>·</span><span>10 min de lecture</span></div>
+        <a href="#" class="article-link">Lire l'article</a>
+      </div>
+    </div>
+    <div class="article-card">
+      <div class="art-ph" style="background:linear-gradient(135deg,#5a7a4a,#3d5830);min-height:120px;">Photo · Foie</div>
+      <div class="article-body-sm">
+        <div class="article-tag">Fiches plantes</div>
+        <div class="article-title article-title-sm">Détox foie naturel : 7 signes que votre foie est surchargé</div>
+        <div class="article-meta" style="margin-top:8px;"><span>4 mars 2026</span></div>
+      </div>
+    </div>
+    <div class="article-card">
+      <div class="art-ph" style="background:linear-gradient(135deg,#6b5c3a,#4a3f28);min-height:120px;">Photo · Romarin</div>
+      <div class="article-body-sm">
+        <div class="article-tag">Spagyrie</div>
+        <div class="article-title article-title-sm">Le romarin : polyvalent, puissant, et insoupçonné</div>
+        <div class="article-meta" style="margin-top:8px;"><span>20 fév. 2026</span></div>
+      </div>
+    </div>
+    <div class="article-card">
+      <div style="padding:20px 18px;background:#F5F0E8;min-height:120px;display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <div class="article-tag">Fiches plantes</div>
+          <div class="article-title article-title-sm">La lavande harmonieuse et purifiante</div>
+        </div>
+        <a href="#" class="article-link">Lire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="spagyrie-section">
+  <div class="spagyrie-inner">
+    <div class="spagyrie-text">
+      <div class="kicker">Comprendre la spagyrie</div>
+      <h2>Un art de la plante vieux de plusieurs siècles</h2>
+      <p>La spagyrie, du grec <em>spao</em> (séparer) et <em>ageiro</em> (réunir), est un procédé d'extraction qui révèle le meilleur de chaque plante — ses huiles essentielles, ses minéraux, ses principes actifs — dans une seule préparation unifiée et directement assimilable.</p>
+      <p>Ce que la pharmacopée moderne sépare, la spagyrie réunit. C'est sa force et son originalité.</p>
+      <a href="#" class="link-forest">En savoir plus sur la spagyrie</a>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-name">Macération</div>
+          <div class="step-desc">Les plantes fraîches sont macérées dans un alcool de vigne bio. Les principes actifs se dissolvent lentement.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-name">Distillation</div>
+          <div class="step-desc">Les huiles essentielles et l'alcool aromatique sont extraits par distillation douce à basse température.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-name">Calcination</div>
+          <div class="step-desc">Le résidu végétal est calciné pour en extraire les sels minéraux et oligo-éléments de la plante.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-name">Cohobation &amp; réunion</div>
+          <div class="step-desc">Les trois principes sont réunis dans un seul flacon. La plante entière, dans sa totalité.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="elixirs-section">
+  <div class="section-header">
+    <div>
+      <div class="kicker">Nos élixirs</div>
+      <h2>Trouvez votre équilibre</h2>
+    </div>
+    <a href="#" class="link-more">Voir tous les élixirs</a>
+  </div>
+  <div class="elixirs-grid">
+    <div class="elixir-card">
+      <div class="elixir-bottle-ico" style="background:#2D4A2D;"></div>
+      <div class="elixir-category">Sommeil</div>
+      <div class="elixir-name">Sérénité nocturne</div>
+      <div class="elixir-desc">Mélisse, valériane, passiflore — pour retrouver un sommeil profond et réparateur</div>
+    </div>
+    <div class="elixir-card">
+      <div class="elixir-bottle-ico" style="background:#B8955A;"></div>
+      <div class="elixir-category">Vitalité</div>
+      <div class="elixir-name">7 Simples</div>
+      <div class="elixir-desc">7 plantes aromatiques bio pour soutenir l'énergie et la vitalité au quotidien</div>
+    </div>
+    <div class="elixir-card">
+      <div class="elixir-bottle-ico" style="background:#6B8C5E;"></div>
+      <div class="elixir-category">Détox</div>
+      <div class="elixir-name">Draineur végétal</div>
+      <div class="elixir-desc">Romarin, chardon-marie, pissenlit — pour soutenir le foie et les émonctoires</div>
+    </div>
+    <div class="elixir-card">
+      <div class="elixir-bottle-ico" style="background:#3d3530;"></div>
+      <div class="elixir-category">Cycle féminin</div>
+      <div class="elixir-name">Équilibre femme</div>
+      <div class="elixir-desc">Pour accompagner la ménopause, la préménopause et les règles douloureuses</div>
+    </div>
+  </div>
+  <div class="elixirs-cta">
+    <a href="#bilan">Faire mon bilan et trouver mon élixir →</a>
+    <p>Pas sûr·e de quel élixir choisir ? Le bilan vous guide en 5 minutes.</p>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="testi-header">
+    <div class="kicker">Ils en parlent mieux que nous</div>
+    <div class="testi-title">Des résultats qui parlent<br><em>d'eux-mêmes</em></div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote">"Complètement déstressé, sommeil retrouvé. Je le conseille dès que je peux autour de moi."</div>
+      <div class="testi-author">
+        <div class="testi-avatar">D</div>
+        <div><div class="testi-name">David C.</div><div class="testi-product">Élixir de Mélisse</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote">"Voilà plus de dix ans que je les utilise. Je peux traverser l'hiver sans aucun souci de santé."</div>
+      <div class="testi-author">
+        <div class="testi-avatar">N</div>
+        <div><div class="testi-name">Nadine M.</div><div class="testi-product">7 Simples</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote">"Mes grignotages ont cessé du jour au lendemain. J'étais sceptique — je suis absolument convaincue."</div>
+      <div class="testi-author">
+        <div class="testi-avatar">M</div>
+        <div><div class="testi-name">Maëva H.</div><div class="testi-product">Élixir confort digestif</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="testi-more"><a href="#">Tous les témoignages</a></div>
+</section>
+
+<div class="press-bar">
+  <div class="press-label">Ils parlent de nous</div>
+  <div class="press-logos">
+    <div class="press-logo">Gala</div>
+    <div class="press-logo">Humasana</div>
+    <div class="press-logo">Marie Claire</div>
+    <div class="press-logo">Santé Magazine</div>
+    <div class="press-logo">Le Monde</div>
+  </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════ -->
-<!-- ANNOTATIONS SYSTEM — SIDEBAR GAUCHE -->
-<!-- ══════════════════════════════════════════════════ -->
-
-<div style="max-width:1320px;margin:0 auto;padding:40px 260px 80px 260px;position:relative;">
-
-  <!-- SIDEBAR GAUCHE (annotations numérotées) -->
-  <div style="position:absolute;left:0;top:40px;width:230px;padding-right:30px;">
-    <div style="position:sticky;top:80px;">
-      <div style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8C8678;margin-bottom:16px;">Structure de la page</div>
-      <div style="display:flex;flex-direction:column;gap:4px;">
-        <a href="#b1" style="display:flex;align-items:center;gap:8px;padding:6px 8px;text-decoration:none;border-radius:3px;transition:background 0.15s;" onmouseover="this.style.background='rgba(107,140,94,0.08)'" onmouseout="this.style.background='transparent'">
-          <span style="width:18px;height:18px;border-radius:50%;background:#F5F0E8;border:1px solid rgba(28,26,20,0.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;color:#8C8678;flex-shrink:0;">1</span>
-          <span style="font-family:'Jost',sans-serif;font-size:11px;color:#5F5E5A;">Navigation épurée</span>
-        </a>
-        <a href="#b2" style="display:flex;align-items:center;gap:8px;padding:6px 8px;text-decoration:none;border-radius:3px;" onmouseover="this.style.background='rgba(107,140,94,0.08)'" onmouseout="this.style.background='transparent'">
-          <span style="width:18px;height:18px;border-radius:50%;background:#F5F0E8;border:1px solid rgba(28,26,20,0.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;color:#8C8678;flex-shrink:0;">2</span>
-          <span style="font-family:'Jost',sans-serif;font-size:11px;color:#5F5E5A;">Hero storytelling</span>
-        </a>
-        <a href="#b3" style="display:flex;align-items:center;gap:8px;padding:6px 8px;text-decoration:none;border-radius:3px;" onmouseover="this.style.background='rgba(107,140,94,0.08)'" onmouseout="this.style.background='transparent'">
-          <span style="width:18px;height:18px;border-radius:50%;background:#F5F0E8;border:1px solid rgba(28,26,20,0.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;color:#8C8678;flex-shrink:0;">3</span>
-          <span style="font-family:'Jost',sans-serif;font-size:11px;color:#5F5E5A;">Manifeste de marque</span>
-        </a>
-        <a href="#b4" style="display:flex;align-items:center;gap:8px;padding:6px 8px;text-decoration:none;border-radius:3px;" onmouseover="this.style.background='rgba(107,140,94,0.08)'" onmouseout="this.style.background='transparent'">
-          <span style="width:18px;height:18px;border-radius:50%;background:#2D4A2D;border:1px solid #2D4A2D;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;color:#A8C49A;flex-shrink:0;">4</span>
-          <span style="font-family:'Jost',sans-serif;font-size:11px;color:#2D4A2D;font-weight:500;">Quiz bilan (lead gen) ★</span>
-        </a>
-        <a href="#b5" style="display:flex;align-items:center;gap:8px;padding:6px 8px;text-decoration:none;border-radius:3px;" onmouseover="this.style.background='rgba(107,140,94,0.08)'" onmouseout="this.style.background='transparent'">
-          <span style="width:18px;height:18px;border-radius:50%;background:#F5F0E8;border:1px solid rgba(28,26,20,0.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;color:#8C8678;flex-shrink:0;">5</span>
-          <span style="font-family:'Jost',sans-serif;font-size:11px;color:#5F5E5A;">Le magazine (articles)</span>
-        </a>
-        <a href="#b6" style="display:flex;align-items:center;gap:8px;padding:6px 8px;text-decoration:none;border-radius:3px;" onmouseover="this.style.background='rgba(107,140,94,0.08)'" onmouseout="this.style.background='transparent'">
-          <span style="width:18px;height:18px;border-radius:50%;background:#F5F0E8;border:1px solid rgba(28,26,20,0.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;color:#8C8678;flex-shrink:0;">6</span>
-          <span style="font-family:'Jost',sans-serif;font-size:11px;color:#5F5E5A;">La spagyrie expliquée</span>
-        </a>
-        <a href="#b7" style="display:flex;align-items:center;gap:8px;padding:6px 8px;text-decoration:none;border-radius:3px;" onmouseover="this.style.background='rgba(107,140,94,0.08)'" onmouseout="this.style.background='transparent'">
-          <span style="width:18px;height:18px;border-radius:50%;background:#F5F0E8;border:1px solid rgba(28,26,20,0.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;color:#8C8678;flex-shrink:0;">7</span>
-          <span style="font-family:'Jost',sans-serif;font-size:11px;color:#5F5E5A;">Aperçu élixirs</span>
-        </a>
-        <a href="#b8" style="display:flex;align-items:center;gap:8px;padding:6px 8px;text-decoration:none;border-radius:3px;" onmouseover="this.style.background='rgba(107,140,94,0.08)'" onmouseout="this.style.background='transparent'">
-          <span style="width:18px;height:18px;border-radius:50%;background:#F5F0E8;border:1px solid rgba(28,26,20,0.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;color:#8C8678;flex-shrink:0;">8</span>
-          <span style="font-family:'Jost',sans-serif;font-size:11px;color:#5F5E5A;">Témoignages clients</span>
-        </a>
-        <a href="#b9" style="display:flex;align-items:center;gap:8px;padding:6px 8px;text-decoration:none;border-radius:3px;" onmouseover="this.style.background='rgba(107,140,94,0.08)'" onmouseout="this.style.background='transparent'">
-          <span style="width:18px;height:18px;border-radius:50%;background:#F5F0E8;border:1px solid rgba(28,26,20,0.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;color:#8C8678;flex-shrink:0;">9</span>
-          <span style="font-family:'Jost',sans-serif;font-size:11px;color:#5F5E5A;">Presse & confiance</span>
-        </a>
-        <a href="#b10" style="display:flex;align-items:center;gap:8px;padding:6px 8px;text-decoration:none;border-radius:3px;" onmouseover="this.style.background='rgba(107,140,94,0.08)'" onmouseout="this.style.background='transparent'">
-          <span style="width:18px;height:18px;border-radius:50%;background:#B8955A;border:1px solid #B8955A;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;color:#fff;flex-shrink:0;">10</span>
-          <span style="font-family:'Jost',sans-serif;font-size:11px;color:#B8955A;font-weight:500;">Newsletter + lead magnet ★</span>
-        </a>
-        <a href="#b11" style="display:flex;align-items:center;gap:8px;padding:6px 8px;text-decoration:none;border-radius:3px;" onmouseover="this.style.background='rgba(107,140,94,0.08)'" onmouseout="this.style.background='transparent'">
-          <span style="width:18px;height:18px;border-radius:50%;background:#F5F0E8;border:1px solid rgba(28,26,20,0.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;color:#8C8678;flex-shrink:0;">11</span>
-          <span style="font-family:'Jost',sans-serif;font-size:11px;color:#5F5E5A;">Footer premium</span>
-        </a>
-      </div>
-      <div style="margin-top:24px;padding:12px;background:#F5F0E8;border:1px solid rgba(28,26,20,0.12);border-radius:3px;">
-        <div style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#8C8678;margin-bottom:6px;">Légende</div>
-        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;font-size:10px;color:#5F5E5A;"><span style="width:8px;height:8px;background:#2D4A2D;border-radius:50%;flex-shrink:0;"></span>Blocs lead gen prioritaires</div>
-        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;font-size:10px;color:#5F5E5A;"><span style="width:8px;height:8px;background:#B8955A;border-radius:50%;flex-shrink:0;"></span>Conversion / capture</div>
-        <div style="display:flex;align-items:center;gap:6px;font-size:10px;color:#5F5E5A;"><span style="width:8px;height:8px;background:#6B8C5E;border-radius:50%;flex-shrink:0;"></span>Contenu & confiance</div>
-      </div>
+<section class="newsletter">
+  <div class="newsletter-left">
+    <div class="kicker">Restez informé·e</div>
+    <h2>Le savoir des plantes, directement dans votre boîte mail</h2>
+    <p>Chaque semaine, un article de fond sur la spagyrie, les plantes médicinales, et les rituels de bien-être naturel. Écrit par Vincent Lauvergne et son équipe. Sans publicité, sans spam.</p>
+    <div class="newsletter-gift">
+      <div class="newsletter-gift-label">Cadeau de bienvenue inclus</div>
+      <div class="newsletter-gift-title">"Guide des 7 plantes essentielles de la spagyrie"</div>
+      <div class="newsletter-gift-sub">PDF offert à votre inscription · 24 pages</div>
     </div>
   </div>
-
-  <!-- PAGE PRINCIPALE -->
-  <div class="page-container">
-
-    <!-- BLOC 1 — NAV -->
-    <div id="b1">
-      <div style="background:#2D4A2D;padding:8px 48px;text-align:center;">
-        <span style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#A8C49A;">Livraison offerte dès 70€ · Qualité certifiée bio · Fabriqué en Auvergne</span>
-      </div>
-      <nav>
-        <div class="nav-logo">
-          <div class="nav-logo-name">Spagybio</div>
-          <div class="nav-logo-tagline">Élixirs spagyriques · Depuis 1999</div>
-        </div>
-        <ul class="nav-links">
-          <li><a href="#">La spagyrie</a></li>
-          <li><a href="#">Le magazine</a></li>
-          <li><a href="#">Nos élixirs</a></li>
-          <li><a href="#">Notre histoire</a></li>
-        </ul>
-        <a href="#" class="nav-cta">Mon bilan bien-être</a>
-      </nav>
-      <div style="background:#F5F0E8;padding:6px 48px;border-bottom:1px solid rgba(28,26,20,0.08);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#8C8678;display:flex;gap:4px;align-items:center;">
-        <span style="opacity:0.5;">→</span><span style="color:#2D4A2D;cursor:pointer;">Sommeil</span><span style="opacity:0.3;">·</span><span style="cursor:pointer;">Détox</span><span style="opacity:0.3;">·</span><span style="cursor:pointer;">Vitalité</span><span style="opacity:0.3;">·</span><span style="cursor:pointer;">Ménopause</span><span style="opacity:0.3;">·</span><span style="cursor:pointer;">Digestion</span><span style="opacity:0.3;">·</span><span style="cursor:pointer;">Articulations</span>
+  <div class="newsletter-form">
+    <div class="newsletter-lead">
+      <div class="lead-icon">↓</div>
+      <div>
+        <div class="lead-text">Guide offert : "7 plantes essentielles de la spagyrie"</div>
+        <div class="lead-sub">PDF · 24 pages · Rédigé par Vincent Lauvergne</div>
       </div>
     </div>
+    <input type="text" placeholder="Votre prénom">
+    <input type="email" placeholder="Votre adresse email">
+    <button type="submit">Recevoir le guide gratuitement →</button>
+    <div class="newsletter-legal">Vos données restent confidentielles. Conformément au RGPD, vous pouvez vous désabonner à tout moment. Aucune revente à des tiers.</div>
+  </div>
+</section>
 
-    <!-- BLOC 2 — HERO -->
-    <div id="b2">
-      <div class="hero">
-        <div class="hero-deco"></div>
-        <div class="hero-left">
-          <div class="hero-eyebrow">Alchimie végétale depuis 1999</div>
-          <h1 class="hero-headline">
-            L'art ancien<br>de <em>retrouver<br>l'équilibre</em>
-          </h1>
-          <p class="hero-body">
-            La spagyrie est une tradition d'extraction végétale vieille de plusieurs siècles. Vincent Lauvergne la perpétue depuis 25 ans depuis le cœur de l'Auvergne, pour vous offrir ce que la nature a de plus puissant.
-          </p>
-          <div class="hero-actions">
-            <a href="#" class="btn-primary">Découvrir mon élixir</a>
-            <a href="#" class="btn-ghost">Lire notre histoire</a>
-          </div>
-        </div>
-        <div class="hero-right">
-          <div class="hero-image-placeholder">
-            <div class="hero-bottle-silhouette">
-              <div class="bottle-cap"></div>
-              <div class="bottle-neck"></div>
-              <div class="bottle-shoulder"></div>
-              <div class="bottle-body"></div>
-            </div>
-          </div>
-          <div class="hero-label-overlay">
-            <div class="hero-label-text">"Ces élixirs m'accompagnent depuis dix ans. Je peux traverser l'hiver sans souci de santé."</div>
-            <div class="hero-label-author">Nadine M. · Cliente depuis 2014</div>
-          </div>
-        </div>
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Spagybio</div>
+      <div class="footer-brand-desc">Élixirs spagyriques fabriqués artisanalement en Auvergne depuis 1999. Plantes fraîches, bio, distillées selon un procédé centenaire mis au point par Vincent Lauvergne.</div>
+      <div class="footer-certifs">
+        <span class="certif">Bio</span>
+        <span class="certif">Made in France</span>
+        <span class="certif">25 ans</span>
       </div>
     </div>
-
-    <!-- BLOC 3 — MANIFESTE -->
-    <div id="b3">
-      <div class="manifeste">
-        <div class="manifeste-kicker">Notre philosophie</div>
-        <div class="manifeste-quote">
-          "Nous croyons que chaque plante contient en elle le meilleur de ce dont l'humain a besoin — à condition de savoir le révéler."
-        </div>
-        <p class="manifeste-body">
-          La spagyrie ne cherche pas à remplacer la médecine. Elle cherche à réveiller ce que le corps sait déjà faire : retrouver son équilibre. C'est ce que nous faisons depuis 25 ans, au cœur de l'Auvergne, avec des plantes fraîches, de l'alcool de vigne, et un savoir-faire transmis de génération en génération.
-        </p>
-        <div class="manifeste-signature">
-          <div class="sig-avatar">V</div>
-          <div class="sig-text">
-            <div class="sig-name">Vincent Lauvergne</div>
-            <div class="sig-role">Co-fondateur · Herboriste spagyrique</div>
-          </div>
-        </div>
-      </div>
+    <div>
+      <div class="footer-col-title">Découvrir</div>
+      <ul class="footer-links">
+        <li><a href="#">La spagyrie</a></li>
+        <li><a href="#">Notre histoire</a></li>
+        <li><a href="#">Nos valeurs</a></li>
+        <li><a href="#">Le magazine</a></li>
+        <li><a href="#">Formations</a></li>
+      </ul>
     </div>
-
-    <!-- BLOC 4 — QUIZ BILAN (LEAD GEN) ★ -->
-    <div id="b4">
-      <div class="quiz-section">
-        <div class="quiz-left">
-          <div class="section-kicker">Votre bilan bien-être</div>
-          <h2>Quel élixir est fait pour vous ?</h2>
-          <p>En 5 questions, nous identifions les déséquilibres qui vous concernent et vous recommandons l'élixir le plus adapté à votre situation. Résultat immédiat, sans engagement.</p>
-          <div style="display:flex;gap:24px;flex-wrap:wrap;">
-            <div style="display:flex;align-items:center;gap:8px;">
-              <div style="width:24px;height:24px;border-radius:50%;background:rgba(168,196,154,0.2);display:flex;align-items:center;justify-content:center;"><span style="font-size:12px;color:#A8C49A;">✓</span></div>
-              <span style="font-size:12px;color:rgba(245,240,232,0.6);">5 questions seulement</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <div style="width:24px;height:24px;border-radius:50%;background:rgba(168,196,154,0.2);display:flex;align-items:center;justify-content:center;"><span style="font-size:12px;color:#A8C49A;">✓</span></div>
-              <span style="font-size:12px;color:rgba(245,240,232,0.6);">Résultat personnalisé</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <div style="width:24px;height:24px;border-radius:50%;background:rgba(168,196,154,0.2);display:flex;align-items:center;justify-content:center;"><span style="font-size:12px;color:#A8C49A;">✓</span></div>
-              <span style="font-size:12px;color:rgba(245,240,232,0.6);">Guide offert par email</span>
-            </div>
-          </div>
-        </div>
-        <div class="quiz-card">
-          <div class="quiz-progress"><div class="quiz-progress-fill"></div></div>
-          <div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#8C8678;margin-bottom:12px;">Question 2 sur 5</div>
-          <div class="quiz-question">Quel symptôme vous impacte le plus au quotidien ?</div>
-          <div class="quiz-options">
-            <div class="quiz-option"><div class="quiz-dot"></div>Fatigue persistante, manque d'énergie</div>
-            <div class="quiz-option selected"><div class="quiz-dot"></div>Difficultés à m'endormir ou sommeil léger</div>
-            <div class="quiz-option"><div class="quiz-dot"></div>Digestion lourde, ballonnements</div>
-            <div class="quiz-option"><div class="quiz-dot"></div>Anxiété, stress difficile à gérer</div>
-          </div>
-          <button style="width:100%;padding:12px;background:#2D4A2D;color:#F5F0E8;border:none;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;">Question suivante →</button>
-          <div class="quiz-step" style="margin-top:12px;">● ● ○ ○ ○</div>
-        </div>
-      </div>
+    <div>
+      <div class="footer-col-title">Nos élixirs</div>
+      <ul class="footer-links">
+        <li><a href="#">Sommeil</a></li>
+        <li><a href="#">Vitalité · 7 Simples</a></li>
+        <li><a href="#">Détox &amp; foie</a></li>
+        <li><a href="#">Ménopause</a></li>
+        <li><a href="#">Digestion</a></li>
+      </ul>
     </div>
-
-    <!-- BLOC 5 — MAGAZINE -->
-    <div id="b5">
-      <div class="magazine">
-        <div class="section-header">
-          <div class="section-header-left">
-            <div class="kicker">Le magazine</div>
-            <h2>Savoirs, plantes<br>& bien-être naturel</h2>
-          </div>
-          <div class="section-header-right"><a href="#">Tous les articles</a></div>
-        </div>
-        <div class="mag-grid">
-          <div class="article-card featured">
-            <div class="article-img-placeholder" style="background:linear-gradient(160deg,#3d5f3a,#2D4A2D);min-height:260px;">
-              <span>Photo · Microbiote intestinal</span>
-            </div>
-            <div class="taboola-badge">Article pont Taboola</div>
-            <div class="article-body">
-              <div class="article-tag">Conseils santé</div>
-              <div class="article-title">Fatigue persistante : 5 causes digestives méconnues et leurs solutions naturelles</div>
-              <div class="article-excerpt">Vous vous réveillez fatigué malgré une nuit correcte ? La réponse se trouve peut-être dans votre intestin, pas dans votre rythme de vie.</div>
-              <div class="article-meta">
-                <span>18 mars 2026</span>
-                <span>·</span>
-                <span>10 min de lecture</span>
-              </div>
-              <div style="margin-top:16px;"><a href="#" class="article-link">Lire l'article</a></div>
-            </div>
-          </div>
-          <div class="article-card">
-            <div class="article-img-placeholder art2" style="min-height:120px;"><span>Photo · Foie & détox</span></div>
-            <div class="article-body" style="padding:16px 18px;">
-              <div class="article-tag">Fiches plantes</div>
-              <div class="article-title">Détox foie naturel : 7 signes que votre foie est surchargé</div>
-              <div class="article-meta" style="margin-top:8px;"><span>4 mars 2026</span></div>
-            </div>
-          </div>
-          <div class="article-card">
-            <div class="article-img-placeholder art3" style="min-height:120px;"><span>Photo · Romarin</span></div>
-            <div class="article-body" style="padding:16px 18px;">
-              <div class="article-tag">Spagyrie</div>
-              <div class="article-title">Le romarin : polyvalent, puissant, et insoupçonné</div>
-              <div class="article-meta" style="margin-top:8px;"><span>20 fév. 2026</span></div>
-            </div>
-          </div>
-          <div class="article-card">
-            <div style="padding:20px 18px;background:#F5F0E8;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
-              <div>
-                <div class="article-tag">Fiches plantes</div>
-                <div class="article-title" style="font-size:14px;">La lavande harmonieuse et purifiante</div>
-              </div>
-              <div style="margin-top:12px;"><a href="#" class="article-link" style="font-size:10px;">Lire →</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- BLOC 6 — SPAGYRIE EXPLIQUÉE -->
-    <div id="b6">
-      <div class="spagyrie-section">
-        <div class="spagyrie-inner">
-          <div class="spagyrie-text">
-            <div class="kicker">Comprendre la spagyrie</div>
-            <h2>Un art de la plante vieux de plusieurs siècles</h2>
-            <p>La spagyrie, du grec <em>spao</em> (séparer) et <em>ageiro</em> (réunir), est un procédé d'extraction qui révèle le meilleur de chaque plante — ses huiles essentielles, ses minéraux, ses principes actifs — dans une seule préparation unifiée et directement assimilable.</p>
-            <p>Ce que la pharmacopée moderne sépare, la spagyrie réunit. C'est sa force et son originalité.</p>
-            <a href="#" style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#2D4A2D;text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-top:8px;">En savoir plus sur la spagyrie →</a>
-          </div>
-          <div class="process-steps">
-            <div class="process-step">
-              <div class="step-num">1</div>
-              <div class="step-content">
-                <div class="step-name">Macération</div>
-                <div class="step-desc">Les plantes fraîches sont macérées dans un alcool de vigne bio. Les principes actifs se dissolvent lentement.</div>
-              </div>
-            </div>
-            <div class="process-step">
-              <div class="step-num">2</div>
-              <div class="step-content">
-                <div class="step-name">Distillation</div>
-                <div class="step-desc">Les huiles essentielles et l'alcool aromatique sont extraits par distillation douce à basse température.</div>
-              </div>
-            </div>
-            <div class="process-step">
-              <div class="step-num">3</div>
-              <div class="step-content">
-                <div class="step-name">Calcination</div>
-                <div class="step-desc">Le résidu végétal est calciné pour en extraire les sels minéraux et oligo-éléments de la plante.</div>
-              </div>
-            </div>
-            <div class="process-step">
-              <div class="step-num">4</div>
-              <div class="step-content">
-                <div class="step-name">Cohobation & réunion</div>
-                <div class="step-desc">Les trois principes sont réunis dans un seul flacon. La plante entière, dans sa totalité.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- BLOC 7 — ÉLIXIRS APERÇU -->
-    <div id="b7">
-      <div class="elixirs-section">
-        <div class="section-header">
-          <div class="section-header-left">
-            <div class="kicker">Nos élixirs</div>
-            <h2>Trouvez votre équilibre</h2>
-          </div>
-          <div class="section-header-right"><a href="#">Voir tous les élixirs</a></div>
-        </div>
-        <div class="elixirs-grid">
-          <div class="elixir-card">
-            <div class="elixir-icon"><div class="elixir-bottle" style="background:#2D4A2D;"></div></div>
-            <div class="elixir-category">Sommeil</div>
-            <div class="elixir-name">Sérénité nocturne</div>
-            <div class="elixir-desc">Mélisse, valériane, passiflore — pour retrouver un sommeil profond et réparateur</div>
-          </div>
-          <div class="elixir-card">
-            <div class="elixir-icon"><div class="elixir-bottle" style="background:#B8955A;"></div></div>
-            <div class="elixir-category">Vitalité</div>
-            <div class="elixir-name">7 Simples</div>
-            <div class="elixir-desc">7 plantes aromatiques bio pour soutenir l'énergie et la vitalité au quotidien</div>
-          </div>
-          <div class="elixir-card">
-            <div class="elixir-icon"><div class="elixir-bottle" style="background:#6B8C5E;"></div></div>
-            <div class="elixir-category">Détox</div>
-            <div class="elixir-name">Draineur végétal</div>
-            <div class="elixir-desc">Romarin, chardon-marie, pissenlit — pour soutenir le foie et les émonctoires</div>
-          </div>
-          <div class="elixir-card">
-            <div class="elixir-icon"><div class="elixir-bottle" style="background:#3d3530;"></div></div>
-            <div class="elixir-category">Cycle féminin</div>
-            <div class="elixir-name">Équilibre femme</div>
-            <div class="elixir-desc">Pour accompagner la ménopause, la préménopause et les règles douloureuses</div>
-          </div>
-        </div>
-        <div class="elixirs-cta">
-          <a href="#" style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#2D4A2D;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid #6B8C5E;padding:12px 24px;">Faire mon bilan et trouver mon élixir →</a>
-          <div style="font-size:11px;color:#8C8678;margin-top:10px;">Pas sûr·e de quel élixir choisir ? Le bilan vous guide en 5 minutes.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- BLOC 8 — TÉMOIGNAGES -->
-    <div id="b8">
-      <div class="testimonials">
-        <div style="text-align:center;margin-bottom:0;">
-          <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#6B8C5E;margin-bottom:12px;">Ils en parlent mieux que nous</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:#F5F0E8;line-height:1.2;">Des résultats qui parlent<br><em style="color:#E8D5B0;">d'eux-mêmes</em></div>
-        </div>
-        <div class="testi-grid">
-          <div class="testi-card">
-            <div class="testi-stars">★★★★★</div>
-            <div class="testi-quote">"Complètement déstressé, sommeil retrouvé. Je le conseille dès que je peux autour de moi."</div>
-            <div class="testi-author">
-              <div class="testi-avatar">D</div>
-              <div>
-                <div class="testi-name">David C.</div>
-                <div class="testi-product">Élixir de Mélisse</div>
-              </div>
-            </div>
-          </div>
-          <div class="testi-card">
-            <div class="testi-stars">★★★★★</div>
-            <div class="testi-quote">"Voilà plus de dix ans que je les utilise. Je peux traverser l'hiver sans aucun souci de santé."</div>
-            <div class="testi-author">
-              <div class="testi-avatar">N</div>
-              <div>
-                <div class="testi-name">Nadine M.</div>
-                <div class="testi-product">7 Simples</div>
-              </div>
-            </div>
-          </div>
-          <div class="testi-card">
-            <div class="testi-stars">★★★★★</div>
-            <div class="testi-quote">"Mes grignotages ont cessé du jour au lendemain. J'étais sceptique — je suis absolument convaincue."</div>
-            <div class="testi-author">
-              <div class="testi-avatar">M</div>
-              <div>
-                <div class="testi-name">Maëva H.</div>
-                <div class="testi-product">Élixir confort digestif</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style="text-align:center;margin-top:32px;">
-          <a href="#" style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#A8C49A;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">Tous les témoignages →</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- BLOC 9 — PRESSE -->
-    <div id="b9">
-      <div class="press-bar">
-        <div class="press-label">Ils parlent de nous</div>
-        <div class="press-logos">
-          <div class="press-logo">Gala</div>
-          <div class="press-logo">Humasana</div>
-          <div class="press-logo">Marie Claire</div>
-          <div class="press-logo">Santé Magazine</div>
-          <div class="press-logo">Le Monde</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- BLOC 10 — NEWSLETTER + LEAD MAGNET ★ -->
-    <div id="b10">
-      <div class="newsletter">
-        <div class="newsletter-left">
-          <div class="kicker">Restez informé·e</div>
-          <h2>Le savoir des plantes, directement dans votre boîte mail</h2>
-          <p>Chaque semaine, un article de fond sur la spagyrie, les plantes médicinales, et les rituels de bien-être naturel. Écrit par Vincent Lauvergne et son équipe. Sans publicité, sans spam.</p>
-          <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(28,26,20,0.1);">
-            <div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#8C8678;margin-bottom:12px;">Cadeau de bienvenue inclus</div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:#2D4A2D;">"Guide des 7 plantes essentielles de la spagyrie"</div>
-            <div style="font-size:11px;color:#8C8678;margin-top:4px;">PDF offert à votre inscription · 24 pages</div>
-          </div>
-        </div>
-        <div>
-          <div class="newsletter-form">
-            <div class="newsletter-lead">
-              <div class="lead-icon">↓</div>
-              <div>
-                <div class="lead-text">Guide offert : "7 plantes essentielles de la spagyrie"</div>
-                <div class="lead-sub">PDF · 24 pages · Rédigé par Vincent Lauvergne</div>
-              </div>
-            </div>
-            <input type="text" placeholder="Votre prénom">
-            <input type="email" placeholder="Votre adresse email">
-            <button>Recevoir le guide gratuitement →</button>
-            <div class="newsletter-legal">Vos données restent confidentielles. Conformément au RGPD, vous pouvez vous désabonner à tout moment. Aucune revente à des tiers.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- BLOC 11 — FOOTER -->
-    <div id="b11">
-      <footer>
-        <div class="footer-top">
-          <div>
-            <div class="footer-brand-name">Spagybio</div>
-            <div class="footer-brand-desc">Élixirs spagyriques fabriqués artisanalement en Auvergne depuis 1999. Plantes fraîches, bio, distillées selon un procédé centenaire mis au point par Vincent Lauvergne.</div>
-            <div style="display:flex;gap:8px;">
-              <span class="certif">Bio</span>
-              <span class="certif">Made in France</span>
-              <span class="certif">25 ans</span>
-            </div>
-          </div>
-          <div>
-            <div class="footer-col-title">Découvrir</div>
-            <ul class="footer-links">
-              <li><a href="#">La spagyrie</a></li>
-              <li><a href="#">Notre histoire</a></li>
-              <li><a href="#">Nos valeurs</a></li>
-              <li><a href="#">Le magazine</a></li>
-              <li><a href="#">Formations</a></li>
-            </ul>
-          </div>
-          <div>
-            <div class="footer-col-title">Nos élixirs</div>
-            <ul class="footer-links">
-              <li><a href="#">Sommeil</a></li>
-              <li><a href="#">Vitalité · 7 Simples</a></li>
-              <li><a href="#">Détox & foie</a></li>
-              <li><a href="#">Ménopause</a></li>
-              <li><a href="#">Digestion</a></li>
-              <li><a href="#">Tous les élixirs</a></li>
-            </ul>
-          </div>
-          <div>
-            <div class="footer-col-title">Service</div>
-            <ul class="footer-links">
-              <li><a href="#">Mon bilan bien-être</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Devenir revendeur</a></li>
-              <li><a href="#">Mon compte</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <div class="footer-legal">© 2026 Spagybio · 100 rue Modigliani, 17440 Aytré · Mentions légales · CGV · RGPD</div>
-          <div style="display:flex;gap:16px;align-items:center;">
-            <span style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.25);">Instagram</span>
-            <span style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.25);">Facebook</span>
-          </div>
-        </div>
-      </footer>
-    </div>
-
-  </div><!-- /page-container -->
-
-  <!-- SIDEBAR DROITE — annotations contextuelles -->
-  <div style="position:absolute;right:0;top:40px;width:230px;padding-left:16px;display:flex;flex-direction:column;gap:0;">
-    <div style="margin-top:56px;">
-      <div style="background:#FFF8E7;border:1px solid #E8D5B0;border-radius:4px;padding:10px 12px;font-size:11px;color:#7A5C2A;line-height:1.5;margin-bottom:8px;"><strong style="display:block;font-size:9px;font-weight:500;color:#5A3E1A;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Nav — 5 entrées max</strong>Aucun prix visible. Le CTA principal est le bilan, pas la boutique. La 2ème barre filtre par bénéfice, pas par produit.</div>
-    </div>
-    <div style="margin-top:200px;">
-      <div style="background:#EAF3DE;border:1px solid #97C459;border-radius:4px;padding:10px 12px;font-size:11px;color:#3B6D11;line-height:1.5;margin-bottom:8px;"><strong style="display:block;font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Hero — zéro prix</strong>Storytelling + témoignage intégré. Le bouton "Découvrir mon élixir" envoie vers le quiz, pas vers la boutique.</div>
-    </div>
-    <div style="margin-top:320px;">
-      <div style="background:#FFF8E7;border:1px solid #E8D5B0;border-radius:4px;padding:10px 12px;font-size:11px;color:#7A5C2A;line-height:1.5;"><strong style="display:block;font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Manifeste</strong>Humanise la marque avant de présenter les produits. La signature de Vincent Lauvergne renforce la crédibilité.</div>
-    </div>
-    <div style="margin-top:100px;">
-      <div style="background:#E1F5EE;border:1px solid #5DCAA5;border-radius:4px;padding:10px 12px;font-size:11px;color:#085041;line-height:1.5;"><strong style="display:block;font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">★ Quiz = machine à leads</strong>Cible Taboola directe. 5 questions → email capturé → séquence auto → élixir recommandé. KPI : taux de complétion &gt; 60%.</div>
-    </div>
-    <div style="margin-top:130px;">
-      <div style="background:#FFF8E7;border:1px solid #E8D5B0;border-radius:4px;padding:10px 12px;font-size:11px;color:#7A5C2A;line-height:1.5;"><strong style="display:block;font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Magazine = articles ponts</strong>Le badge "Article pont Taboola" identifie les articles à pousser en natif. Chaque article → CTA vers LP thématique.</div>
-    </div>
-    <div style="margin-top:280px;">
-      <div style="background:#FFF8E7;border:1px solid #E8D5B0;border-radius:4px;padding:10px 12px;font-size:11px;color:#7A5C2A;line-height:1.5;"><strong style="display:block;font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Spagyrie = différenciation</strong>Ce bloc éducatif justifie le prix premium et positionne Spagybio comme référence, pas comme produit générique.</div>
-    </div>
-    <div style="margin-top:160px;">
-      <div style="background:#FFF8E7;border:1px solid #E8D5B0;border-radius:4px;padding:10px 12px;font-size:11px;color:#7A5C2A;line-height:1.5;"><strong style="display:block;font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Élixirs = aperçu, pas boutique</strong>Pas de prix. Le CTA final du bloc renvoie vers le quiz, pas vers "Ajouter au panier".</div>
-    </div>
-    <div style="margin-top:160px;">
-      <div style="background:#FFF8E7;border:1px solid #E8D5B0;border-radius:4px;padding:10px 12px;font-size:11px;color:#7A5C2A;line-height:1.5;"><strong style="display:block;font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Témoignages = preuves sociales</strong>Les 6 témoignages existants du site actuel sont une richesse rare. Ils s'intègrent ici sans modification.</div>
-    </div>
-    <div style="margin-top:80px;">
-      <div style="background:#E8D5B0;border:1px solid #B8955A;border-radius:4px;padding:10px 12px;font-size:11px;color:#5A3E1A;line-height:1.5;"><strong style="display:block;font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">★ Newsletter = lead magnet</strong>Le guide PDF "7 plantes" est le cadeau d'entrée dans la séquence email. Connecté à Brevo. Objectif : 500 inscrits/mois via Taboola.</div>
+    <div>
+      <div class="footer-col-title">Service</div>
+      <ul class="footer-links">
+        <li><a href="#">Mon bilan bien-être</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Devenir revendeur</a></li>
+        <li><a href="#">Mon compte</a></li>
+      </ul>
     </div>
   </div>
-
-</div><!-- /wrapper -->
+  <div class="footer-bottom">
+    <div class="footer-legal">© 2026 Spagybio · 100 rue Modigliani, 17440 Aytré · Mentions légales · CGV · RGPD</div>
+    <div class="footer-social">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
