@@ -218,6 +218,40 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 .newsletter-form button:hover { background: var(--gold); color: var(--ink); }
 .newsletter-legal { font-size: 10px; color: var(--warm-gray); line-height: 1.5; }
 
+
+/* SECTION VINCENT LAUVERGNE */
+.vincent-section { padding: 80px 48px; background: var(--ink); color: var(--parchment); }
+.vincent-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; max-width: 1100px; margin: 0 auto; }
+.vincent-portrait { position: relative; }
+.vincent-portrait-frame { position: relative; display: inline-block; }
+.vincent-portrait-frame img { width: 100%; max-width: 340px; display: block; filter: sepia(0.3) brightness(0.85) contrast(1.1); border: 1px solid rgba(184,149,90,0.2); }
+.vincent-portrait-frame::before { content: ''; position: absolute; top: 12px; left: 12px; right: -12px; bottom: -12px; border: 1px solid rgba(184,149,90,0.2); pointer-events: none; z-index: 0; }
+.vincent-portrait-caption { margin-top: 16px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); }
+.vincent-livres { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
+.vincent-livre { background: rgba(255,255,255,0.04); border: 1px solid rgba(184,149,90,0.2); border-left: 2px solid var(--gold); padding: 10px 14px; }
+.vincent-livre-titre { font-family: var(--serif); font-size: 13px; font-style: italic; color: var(--gold-lt); }
+.vincent-livre-date { font-size: 10px; color: var(--warm-gray); margin-top: 2px; letter-spacing: 1px; }
+/* Texte droite */
+.vincent-content .kicker { color: var(--sage-lt); margin-bottom: 16px; }
+.vincent-title { font-family: var(--serif); font-size: 40px; font-weight: 300; color: var(--parchment); line-height: 1.15; margin-bottom: 6px; }
+.vincent-title em { font-style: italic; color: var(--gold-lt); }
+.vincent-role { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin-bottom: 32px; }
+.vincent-quote { font-family: var(--serif); font-size: 20px; font-style: italic; font-weight: 300; color: var(--gold-lt); line-height: 1.5; border-left: 2px solid var(--gold); padding-left: 20px; margin-bottom: 28px; }
+.vincent-body { font-size: 13px; color: rgba(245,240,232,0.65); line-height: 1.9; margin-bottom: 24px; }
+.vincent-body strong { color: var(--parchment); font-weight: 400; }
+/* Timeline */
+.vincent-timeline { display: flex; flex-direction: column; gap: 0; margin-bottom: 28px; }
+.vincent-tl-item { display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.vincent-tl-item:last-child { border-bottom: none; }
+.vincent-tl-year { font-family: var(--serif); font-size: 20px; font-style: italic; color: var(--gold); min-width: 48px; line-height: 1.2; }
+.vincent-tl-text { font-size: 13px; color: rgba(245,240,232,0.65); line-height: 1.6; }
+.vincent-tl-text strong { color: var(--parchment); font-weight: 400; }
+/* Stats */
+.vincent-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 28px; }
+.vincent-stat { background: rgba(255,255,255,0.04); padding: 16px 20px; text-align: center; border: 1px solid rgba(255,255,255,0.06); }
+.vincent-stat-num { font-family: var(--serif); font-size: 36px; font-weight: 300; color: var(--gold); line-height: 1; }
+.vincent-stat-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage); margin-top: 4px; }
+
 /* FOOTER */
 footer { background: var(--ink); padding: 60px 48px 32px; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
@@ -676,6 +710,87 @@ function qSubmit(e) {
     <input type="email" placeholder="Votre adresse email">
     <button type="submit">Recevoir le guide gratuitement →</button>
     <div class="newsletter-legal">Vos données restent confidentielles. Conformément au RGPD, vous pouvez vous désabonner à tout moment. Aucune revente à des tiers.</div>
+  </div>
+</section>
+
+
+<!-- SECTION VINCENT LAUVERGNE -->
+<section class="vincent-section" id="notre-histoire">
+  <div class="vincent-inner">
+
+    <!-- Portrait + livres -->
+    <div class="vincent-portrait">
+      <div class="vincent-portrait-frame">
+        <img
+          src="https://www.spagybio.fr/wp-content/uploads/2024/02/Vincent-2023-744x744.jpg"
+          alt="Vincent Lauvergne — Fondateur de Spagybio, herboriste-distillateur et spagyriste depuis 25 ans en Auvergne"
+          width="340" height="340"
+          loading="lazy"
+        >
+      </div>
+      <div class="vincent-portrait-caption">Vincent Lauvergne · Auvergne</div>
+
+      <div class="vincent-livres">
+        <div class="vincent-livre">
+          <div class="vincent-livre-titre">"Phytothérapie traditionnelle — La magie verte"</div>
+          <div class="vincent-livre-date">Premier ouvrage publié · 2007</div>
+        </div>
+        <div class="vincent-livre">
+          <div class="vincent-livre-titre">"Les élixirs spagyriques et leurs bienfaits"</div>
+          <div class="vincent-livre-date">Deuxième ouvrage publié · 2013</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenu -->
+    <div class="vincent-content">
+      <div class="kicker">L'homme derrière les élixirs</div>
+      <h2 class="vincent-title">Vincent Lauvergne,<br><em>herboriste-distillateur</em></h2>
+      <div class="vincent-role">Fondateur · Spagyriste · Auteur · 25 ans d'expertise</div>
+
+      <div class="vincent-quote">"Chaque élixir contient l'âme entière de la plante, pas seulement ses molécules."</div>
+
+      <p class="vincent-body">Depuis l'adolescence, Vincent cultive un jardin de plantes médicinales et explore les remèdes anciens. À 17 ans, il découvre la spagyrie — cette branche végétale de l'alchimie — et commence ses premières distillations dans sa chambre de parents. Ce qui débute comme une passion devient une vocation, puis une science.</p>
+
+      <div class="vincent-timeline">
+        <div class="vincent-tl-item">
+          <div class="vincent-tl-year">17</div>
+          <div class="vincent-tl-text"><strong>Premières distillations spagyriques</strong> — Dans sa chambre, Vincent réalise ses premières expériences alchimiques avec les plantes médicinales.</div>
+        </div>
+        <div class="vincent-tl-item">
+          <div class="vincent-tl-year">23</div>
+          <div class="vincent-tl-text"><strong>La guérison fondatrice</strong> — Atteint d'une pneumopathie sévère, il se soigne avec son élixir des 7 Simples. Son médecin parle de "guérison miraculeuse".</div>
+        </div>
+        <div class="vincent-tl-item">
+          <div class="vincent-tl-year">1995</div>
+          <div class="vincent-tl-text"><strong>Premiers partages</strong> — Création d'une association pour diffuser ses élixirs et ses connaissances en phytothérapie.</div>
+        </div>
+        <div class="vincent-tl-item">
+          <div class="vincent-tl-year">2007</div>
+          <div class="vincent-tl-text"><strong>Auteur publié</strong> — Publication de son premier ouvrage sur la phytothérapie traditionnelle, suivi en 2013 d'un livre dédié aux élixirs spagyriques.</div>
+        </div>
+        <div class="vincent-tl-item">
+          <div class="vincent-tl-year">2023</div>
+          <div class="vincent-tl-text"><strong>Naissance de Spagybio</strong> — Après 25 ans de recherches, Vincent lance Spagybio pour faire connaître la spagyrie au grand public.</div>
+        </div>
+      </div>
+
+      <div class="vincent-stats">
+        <div class="vincent-stat">
+          <div class="vincent-stat-num">25</div>
+          <div class="vincent-stat-label">Ans d'expertise</div>
+        </div>
+        <div class="vincent-stat">
+          <div class="vincent-stat-num">30+</div>
+          <div class="vincent-stat-label">Élixirs créés</div>
+        </div>
+        <div class="vincent-stat">
+          <div class="vincent-stat-num">2</div>
+          <div class="vincent-stat-label">Ouvrages publiés</div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
