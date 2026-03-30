@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon Bilan Bien-Être — Spagybio</title>
+<meta name="description" content="Découvrez en 5 questions l'élixir spagyrique fait pour vous. Bilan personnalisé offert par Spagybio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1C1A14; --forest:#2D4A2D; --sage:#6B8C5E; --sage-lt:#A8C49A;
+  --parchment:#F5F0E8; --cream:#FAF7F2; --gold:#B8955A; --gold-lt:#E8D5B0;
+  --warm-gray:#8C8678; --border:rgba(28,26,20,0.12);
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;min-height:100vh}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--border);background:var(--cream)}
+.nav-logo-name{font-family:var(--serif);font-size:20px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--forest);text-decoration:none}
+.nav-back{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--warm-gray);text-decoration:none;display:flex;align-items:center;gap:6px}
+.nav-back::before{content:'←'}
+
+/* HERO QUIZ */
+.quiz-hero{background:var(--forest);padding:48px;text-align:center;border-bottom:1px solid rgba(255,255,255,0.08)}
+.quiz-hero-kicker{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--sage-lt);margin-bottom:12px}
+.quiz-hero-title{font-family:var(--serif);font-size:36px;font-weight:300;color:var(--parchment);line-height:1.2;margin-bottom:8px}
+.quiz-hero-title em{font-style:italic;color:var(--gold-lt)}
+.quiz-hero-sub{font-size:13px;color:rgba(245,240,232,0.6);max-width:480px;margin:0 auto}
+
+/* CONTAINER */
+.quiz-wrap{max-width:680px;margin:0 auto;padding:60px 24px 80px}
+
+/* PROGRESS */
+.progress-bar{height:3px;background:var(--border);border-radius:2px;margin-bottom:40px;overflow:hidden}
+.progress-fill{height:100%;background:var(--gold);border-radius:2px;transition:width .4s ease}
+.progress-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--warm-gray);text-align:center;margin-bottom:16px}
+
+/* ÉTAPE */
+.step{display:none;animation:fadeIn .3s ease}
+.step.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.step-question{font-family:var(--serif);font-size:28px;font-weight:300;color:var(--forest);line-height:1.3;margin-bottom:8px}
+.step-sub{font-size:13px;color:var(--warm-gray);margin-bottom:32px}
+
+/* OPTIONS */
+.options{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.option{padding:14px 20px;border:1px solid var(--border);background:white;font-family:var(--sans);font-size:13px;color:var(--ink);cursor:pointer;display:flex;align-items:center;gap:14px;transition:all .15s;text-align:left;border-radius:2px}
+.option:hover{border-color:var(--sage);background:rgba(107,140,94,0.04)}
+.option.selected{border-color:var(--sage);background:rgba(107,140,94,0.08)}
+.option-dot{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--border);flex-shrink:0;transition:all .15s}
+.option.selected .option-dot{background:var(--sage);border-color:var(--sage)}
+.option-text{font-size:14px}
+.option-sub{font-size:11px;color:var(--warm-gray);display:block;margin-top:2px}
+
+/* BTN */
+.btn-next{background:var(--forest);color:var(--parchment);border:none;padding:14px 40px;font-family:var(--sans);font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:500;cursor:pointer;transition:background .2s;width:100%}
+.btn-next:hover{background:var(--sage)}
+.btn-next:disabled{opacity:0.4;cursor:not-allowed}
+
+/* ÉTAPE EMAIL */
+.email-step-intro{background:var(--parchment);border:1px solid var(--border);border-left:3px solid var(--gold);padding:20px 24px;margin-bottom:28px}
+.email-step-intro p{font-family:var(--serif);font-size:16px;font-style:italic;color:var(--forest);line-height:1.6}
+.email-step-intro span{font-size:11px;color:var(--warm-gray);display:block;margin-top:6px}
+
+.form-group{margin-bottom:16px}
+.form-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--warm-gray);display:block;margin-bottom:6px}
+.form-input{width:100%;padding:14px 16px;border:1px solid var(--border);background:white;font-family:var(--sans);font-size:14px;color:var(--ink);outline:none;transition:border-color .2s;border-radius:2px}
+.form-input:focus{border-color:var(--sage)}
+.form-input::placeholder{color:var(--warm-gray);opacity:.7}
+.form-legal{font-size:10px;color:var(--warm-gray);line-height:1.5;margin-top:12px}
+.btn-submit{background:var(--gold);color:var(--ink);border:none;padding:16px 40px;font-family:var(--sans);font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:500;cursor:pointer;transition:background .2s;width:100%;margin-top:16px}
+.btn-submit:hover{background:var(--forest);color:var(--parchment)}
+
+/* RÉSULTAT */
+.result{display:none}
+.result.active{display:block;animation:fadeIn .4s ease}
+.result-badge{background:var(--forest);color:var(--sage-lt);font-size:9px;letter-spacing:3px;text-transform:uppercase;padding:6px 16px;display:inline-block;margin-bottom:24px}
+.result-title{font-family:var(--serif);font-size:38px;font-weight:300;color:var(--forest);line-height:1.2;margin-bottom:8px}
+.result-title em{font-style:italic;color:var(--gold)}
+.result-sub{font-size:14px;color:var(--warm-gray);line-height:1.8;margin-bottom:32px;max-width:520px}
+.result-elixir{background:var(--parchment);border:1px solid var(--border);padding:28px 32px;margin-bottom:32px}
+.result-elixir-kicker{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:8px}
+.result-elixir-name{font-family:var(--serif);font-size:28px;font-weight:500;color:var(--forest);margin-bottom:8px}
+.result-elixir-desc{font-size:13px;color:var(--warm-gray);line-height:1.8;margin-bottom:20px}
+.result-elixir-plants{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.plant-tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--sage);border:1px solid var(--sage);padding:3px 10px}
+.result-cta{background:var(--forest);color:var(--parchment);border:none;padding:14px 32px;font-family:var(--sans);font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;margin-right:12px;transition:background .2s}
+.result-cta:hover{background:var(--gold);color:var(--ink)}
+.result-note{font-size:12px;color:var(--warm-gray);margin-top:20px;font-style:italic}
+.result-benefits{display:flex;flex-direction:column;gap:6px;margin-top:16px}
+.benefit-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink)}
+.benefit-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* Formulaire Netlify caché */
+.netlify-hidden{display:none}
+</style>
+</head>
+<body>
+
+<!-- Netlify Forms — formulaire caché pour la détection -->
+<form name="bilan-bien-etre" data-netlify="true" netlify-honeypot="bot-field" class="netlify-hidden">
+  <input type="text" name="bot-field">
+  <input type="text" name="prenom">
+  <input type="email" name="email">
+  <input type="hidden" name="symptome">
+  <input type="hidden" name="duree">
+  <input type="hidden" name="experience">
+  <input type="hidden" name="age">
+  <input type="hidden" name="elixir_recommande">
+</form>
+
+<nav>
+  <a href="/" class="nav-logo-name">Spagybio</a>
+  <a href="/" class="nav-back">Retour au site</a>
+</nav>
+
+<div class="quiz-hero">
+  <div class="quiz-hero-kicker">Bilan personnalisé · 5 questions · 2 minutes</div>
+  <h1 class="quiz-hero-title">Quel élixir est fait<br><em>pour vous ?</em></h1>
+  <p class="quiz-hero-sub">Répondez à 5 questions pour recevoir votre recommandation personnalisée par email.</p>
+</div>
+
+<div class="quiz-wrap">
+
+  <div class="progress-label" id="progress-label">Question 1 sur 5</div>
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:20%"></div></div>
+
+  <!-- ÉTAPE 1 -->
+  <div class="step active" id="step-1">
+    <div class="step-question">Quelle est votre préoccupation principale en ce moment ?</div>
+    <div class="step-sub">Choisissez ce qui vous correspond le mieux.</div>
+    <div class="options" id="opts-1">
+      <div class="option" data-value="sommeil" onclick="selectOption(1, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">Sommeil difficile, nuits agitées</span><span class="option-sub">Difficultés à m'endormir ou réveils fréquents</span></div>
+      </div>
+      <div class="option" data-value="stress" onclick="selectOption(1, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">Stress, anxiété, nervosité</span><span class="option-sub">Tension intérieure difficile à gérer</span></div>
+      </div>
+      <div class="option" data-value="digestion" onclick="selectOption(1, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">Digestion lourde, inconfort intestinal</span><span class="option-sub">Ballonnements, lourdeurs, transit irrégulier</span></div>
+      </div>
+      <div class="option" data-value="vitalite" onclick="selectOption(1, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">Fatigue, manque d'énergie et de vitalité</span><span class="option-sub">Sensation de vide, difficulté à démarrer</span></div>
+      </div>
+      <div class="option" data-value="feminin" onclick="selectOption(1, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">Équilibre féminin, cycle, ménopause</span><span class="option-sub">Bouffées de chaleur, règles douloureuses, préménopause</span></div>
+      </div>
+    </div>
+    <button class="btn-next" id="btn-1" disabled onclick="nextStep(1)">Question suivante →</button>
+  </div>
+
+  <!-- ÉTAPE 2 -->
+  <div class="step" id="step-2">
+    <div class="step-question">Depuis combien de temps ressentez-vous ce déséquilibre ?</div>
+    <div class="step-sub">La durée nous aide à affiner votre recommandation.</div>
+    <div class="options" id="opts-2">
+      <div class="option" data-value="quelques-semaines" onclick="selectOption(2, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">Quelques semaines</span></div>
+      </div>
+      <div class="option" data-value="quelques-mois" onclick="selectOption(2, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">Quelques mois</span></div>
+      </div>
+      <div class="option" data-value="plus-dun-an" onclick="selectOption(2, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">Plus d'un an</span></div>
+      </div>
+      <div class="option" data-value="depuis-toujours" onclick="selectOption(2, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">Depuis très longtemps, c'est chronique</span></div>
+      </div>
+    </div>
+    <button class="btn-next" id="btn-2" disabled onclick="nextStep(2)">Question suivante →</button>
+  </div>
+
+  <!-- ÉTAPE 3 -->
+  <div class="step" id="step-3">
+    <div class="step-question">Avez-vous déjà essayé des compléments naturels ?</div>
+    <div class="step-sub">Votre expérience nous permet de mieux vous guider.</div>
+    <div class="options" id="opts-3">
+      <div class="option" data-value="jamais" onclick="selectOption(3, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">Jamais, c'est la première fois</span></div>
+      </div>
+      <div class="option" data-value="sans-resultat" onclick="selectOption(3, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">Oui, mais sans résultat convaincant</span></div>
+      </div>
+      <div class="option" data-value="peu-effets" onclick="selectOption(3, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">Oui, avec des effets limités</span></div>
+      </div>
+      <div class="option" data-value="bons-resultats" onclick="selectOption(3, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">Oui, avec de bons résultats</span></div>
+      </div>
+    </div>
+    <button class="btn-next" id="btn-3" disabled onclick="nextStep(3)">Question suivante →</button>
+  </div>
+
+  <!-- ÉTAPE 4 -->
+  <div class="step" id="step-4">
+    <div class="step-question">Dans quelle tranche d'âge vous situez-vous ?</div>
+    <div class="step-sub">Certains élixirs sont particulièrement adaptés à chaque étape de vie.</div>
+    <div class="options" id="opts-4">
+      <div class="option" data-value="18-35" onclick="selectOption(4, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">18 – 35 ans</span></div>
+      </div>
+      <div class="option" data-value="36-50" onclick="selectOption(4, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">36 – 50 ans</span></div>
+      </div>
+      <div class="option" data-value="51-65" onclick="selectOption(4, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">51 – 65 ans</span></div>
+      </div>
+      <div class="option" data-value="65+" onclick="selectOption(4, this)">
+        <div class="option-dot"></div>
+        <div><span class="option-text">65 ans et plus</span></div>
+      </div>
+    </div>
+    <button class="btn-next" id="btn-4" disabled onclick="nextStep(4)">Dernière étape →</button>
+  </div>
+
+  <!-- ÉTAPE 5 — CAPTURE EMAIL -->
+  <div class="step" id="step-5">
+    <div class="step-question">Votre résultat personnalisé est prêt.</div>
+    <div class="step-sub">Entrez votre prénom et email pour le recevoir immédiatement.</div>
+
+    <div class="email-step-intro">
+      <p>"Chaque déséquilibre a sa plante. Chaque plante, son élixir. Votre recommandation est unique."</p>
+      <span>— Vincent Lauvergne, herboriste-distillateur depuis 1999</span>
+    </div>
+
+    <form name="bilan-bien-etre" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="form-name" value="bilan-bien-etre">
+      <input type="text" name="bot-field" style="display:none">
+      <input type="hidden" name="symptome" id="f-symptome">
+      <input type="hidden" name="duree" id="f-duree">
+      <input type="hidden" name="experience" id="f-experience">
+      <input type="hidden" name="age" id="f-age">
+      <input type="hidden" name="elixir_recommande" id="f-elixir">
+
+      <div class="form-group">
+        <label class="form-label">Votre prénom</label>
+        <input type="text" name="prenom" id="f-prenom" class="form-input" placeholder="Marie" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Votre adresse email</label>
+        <input type="email" name="email" id="f-email" class="form-input" placeholder="marie@exemple.fr" required>
+      </div>
+
+      <div class="form-legal">En soumettant ce formulaire, vous acceptez de recevoir votre recommandation personnalisée et les conseils bien-être de Spagybio. Vous pouvez vous désabonner à tout moment. Données confidentielles, conformément au RGPD.</div>
+
+      <button type="submit" class="btn-submit">Recevoir ma recommandation gratuite →</button>
+    </form>
+  </div>
+
+  <!-- RÉSULTAT -->
+  <div class="result" id="result">
+    <div class="result-badge">Votre élixir personnalisé</div>
+    <h2 class="result-title">Bonjour <span id="r-prenom"></span>,<br>voici <em id="r-elixir-name"></em></h2>
+    <p class="result-sub" id="r-desc"></p>
+
+    <div class="result-elixir">
+      <div class="result-elixir-kicker" id="r-category"></div>
+      <div class="result-elixir-name" id="r-elixir-full"></div>
+      <div class="result-elixir-desc" id="r-elixir-desc"></div>
+      <div class="result-elixir-plants" id="r-plants"></div>
+      <div class="result-benefits" id="r-benefits"></div>
+    </div>
+
+    <div>
+      <a href="/" class="result-cta">Découvrir l'élixir →</a>
+    </div>
+    <p class="result-note">📩 Un email de confirmation vient de vous être envoyé avec votre recommandation complète et un guide offert de Vincent Lauvergne.</p>
+  </div>
+
+</div>
+
+<script>
+const answers = {1: null, 2: null, 3: null, 4: null};
+
+const elixirs = {
+  sommeil: {
+    name: "Sérénité Nocturne",
+    category: "Élixir du sommeil",
+    desc: "Conçu pour accompagner les nuits agitées, cet élixir allie la douceur de la Mélisse à la profondeur de la Valériane selon le procédé spagyrique de Vincent Lauvergne.",
+    fullDesc: "L'élixir Sérénité Nocturne est la réponse de la spagyrie aux nuits sans repos. La Mélisse apaise le système nerveux, la Valériane favorise l'endormissement, la Passiflore maintient un sommeil profond et réparateur.",
+    plants: ["Mélisse", "Valériane", "Passiflore"],
+    benefits: ["Aide à l'endormissement naturel", "Réduit les réveils nocturnes", "Apaise le mental avant le coucher", "Sans accoutumance"]
+  },
+  stress: {
+    name: "Équilibre & Sérénité",
+    category: "Élixir anti-stress",
+    desc: "Pour retrouver un ancrage naturel face aux tensions du quotidien, cet élixir puise dans la tradition alchimique les plantes adaptogènes les plus douces.",
+    fullDesc: "L'élixir Équilibre & Sérénité est formulé pour les personnes qui traversent des périodes de tension intense. L'Aubépine stabilise le rythme cardiaque, la Lavande apaise le système nerveux central, la Rhodiole renforce la résistance au stress.",
+    plants: ["Aubépine", "Lavande", "Rhodiole"],
+    benefits: ["Diminue l'anxiété et la nervosité", "Stabilise l'humeur", "Renforce la résistance au stress", "Soutient le système nerveux"]
+  },
+  digestion: {
+    name: "Confort Digestif",
+    category: "Élixir digestif",
+    desc: "Cet élixir accompagne votre système digestif avec les plantes les plus efficaces de la tradition phytothérapique, distillées selon le procédé spagyrique pour une assimilation optimale.",
+    fullDesc: "L'élixir Confort Digestif cible les inconforts digestifs récurrents. Le Romarin stimule la production biliaire, la Mélisse apaise les spasmes intestinaux, le Fenouil réduit les ballonnements. L'ensemble est réuni par la spagyrie pour une action complète.",
+    plants: ["Romarin", "Mélisse", "Fenouil"],
+    benefits: ["Réduit les ballonnements", "Facilite la digestion des graisses", "Apaise les spasmes intestinaux", "Régule le transit"]
+  },
+  vitalite: {
+    name: "Les 7 Simples",
+    category: "Élixir de vitalité",
+    desc: "La formule historique de Spagybio depuis 1999. Sept plantes aromatiques bio, réunies dans un élixir qui recharge l'énergie vitale en profondeur.",
+    fullDesc: "Les 7 Simples est l'élixir fondateur de Spagybio. Il réunit sept plantes aromatiques de la tradition alchimique — Thym, Romarin, Sauge, Lavande, Marjolaine, Menthe, Origan — pour soutenir l'énergie à tous les niveaux : physique, mental et émotionnel.",
+    plants: ["Thym", "Romarin", "Sauge", "Lavande", "Marjolaine"],
+    benefits: ["Boost d'énergie naturel et durable", "Soutient les défenses immunitaires", "Améliore la clarté mentale", "Renforce la vitalité globale"]
+  },
+  feminin: {
+    name: "Équilibre Femme",
+    category: "Élixir féminin",
+    desc: "Formulé pour accompagner les grandes transitions de la vie féminine, cet élixir apporte douceur et équilibre hormonal naturel selon la tradition spagyrique.",
+    fullDesc: "L'élixir Équilibre Femme est pensé pour accompagner la préménopause, la ménopause et les cycles irréguliers. La Sauge réduit les bouffées de chaleur, l'Actée à grappes soutient l'équilibre hormonal, le Houblon favorise l'apaisement émotionnel.",
+    plants: ["Sauge", "Actée à grappes", "Houblon"],
+    benefits: ["Atténue les bouffées de chaleur", "Régule les cycles", "Soutient l'équilibre hormonal", "Apaise les troubles de l'humeur"]
+  }
+};
+
+function selectOption(step, el) {
+  document.querySelectorAll(`#opts-${step} .option`).forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  answers[step] = el.dataset.value;
+  document.getElementById(`btn-${step}`).disabled = false;
+}
+
+function nextStep(current) {
+  document.getElementById(`step-${current}`).classList.remove('active');
+  const next = current + 1;
+  document.getElementById(`step-${next}`).classList.add('active');
+
+  const pct = (next / 5) * 100;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-label').textContent = `Question ${next} sur 5`;
+
+  if (next === 5) {
+    document.getElementById('progress-label').textContent = 'Dernière étape — votre résultat';
+    // Pré-remplir les champs cachés
+    document.getElementById('f-symptome').value = answers[1] || '';
+    document.getElementById('f-duree').value = answers[2] || '';
+    document.getElementById('f-experience').value = answers[3] || '';
+    document.getElementById('f-age').value = answers[4] || '';
+    document.getElementById('f-elixir').value = elixirs[answers[1]]?.name || '';
+  }
+
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const prenom = document.getElementById('f-prenom').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  if (!prenom || !email) return;
+
+  // Soumettre à Netlify Forms
+  const formData = new FormData(e.target);
+  fetch('/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: new URLSearchParams(formData).toString()
+  }).catch(() => {});
+
+  // Afficher le résultat
+  showResult(prenom);
+}
+
+function showResult(prenom) {
+  document.getElementById('step-5').classList.remove('active');
+  document.getElementById('progress-label').textContent = 'Votre recommandation personnalisée';
+  document.getElementById('progress-fill').style.width = '100%';
+
+  const symptome = answers[1] || 'vitalite';
+  const elixir = elixirs[symptome];
+
+  document.getElementById('r-prenom').textContent = prenom;
+  document.getElementById('r-elixir-name').textContent = elixir.name;
+  document.getElementById('r-desc').textContent = elixir.desc;
+  document.getElementById('r-category').textContent = elixir.category;
+  document.getElementById('r-elixir-full').textContent = elixir.name;
+  document.getElementById('r-elixir-desc').textContent = elixir.fullDesc;
+
+  const plantsEl = document.getElementById('r-plants');
+  plantsEl.innerHTML = elixir.plants.map(p => `<span class="plant-tag">${p}</span>`).join('');
+
+  const benefitsEl = document.getElementById('r-benefits');
+  benefitsEl.innerHTML = elixir.benefits.map(b => `<div class="benefit-item"><div class="benefit-dot"></div>${b}</div>`).join('');
+
+  document.getElementById('result').classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+</body>
+</html>
