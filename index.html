@@ -67,7 +67,8 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 .sig-role { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--warm-gray); }
 
 /* QUIZ */
-.quiz-section { background: var(--forest); padding: 72px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.quiz-section { background: var(--forest); padding: 60px 80px; }
+.quiz-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
 .quiz-kicker { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage-lt); margin-bottom: 20px; }
 .quiz-section h2 { font-family: var(--serif); font-size: 38px; font-weight: 300; color: var(--parchment); line-height: 1.2; margin-bottom: 16px; }
 .quiz-section p { font-size: 13px; color: rgba(245,240,232,0.65); line-height: 1.8; margin-bottom: 28px; }
@@ -75,18 +76,54 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 .quiz-check { display: flex; align-items: center; gap: 8px; }
 .quiz-check-dot { width: 22px; height: 22px; border-radius: 50%; background: rgba(168,196,154,0.2); display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--sage-lt); }
 .quiz-check-label { font-size: 12px; color: rgba(245,240,232,0.6); }
+/* QUIZ FONCTIONNEL */
 .quiz-card { background: var(--parchment); padding: 32px; border-radius: 2px; }
-.quiz-progress { height: 2px; background: var(--border); margin-bottom: 8px; border-radius: 1px; }
-.quiz-progress-fill { width: 40%; height: 100%; background: var(--gold); border-radius: 1px; }
+.quiz-progress-bar { height: 3px; background: rgba(28,26,20,0.15); border-radius: 2px; margin-bottom: 8px; }
+.quiz-progress-fill { height: 100%; background: var(--gold); border-radius: 2px; transition: width .4s ease; }
 .quiz-step-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 20px; }
-.quiz-question { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--forest); margin-bottom: 20px; line-height: 1.3; }
-.quiz-options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
-.quiz-option { padding: 10px 14px; border: 1px solid var(--border); background: white; font-size: 12px; color: var(--ink); cursor: pointer; display: flex; align-items: center; gap: 10px; transition: border-color 0.2s; }
-.quiz-option.selected { border-color: var(--sage); background: rgba(107,140,94,0.06); }
-.quiz-dot { width: 14px; height: 14px; border-radius: 50%; border: 1px solid var(--border); flex-shrink: 0; }
+.quiz-step { display: none; }
+.quiz-step.active { display: block; animation: qfade .3s ease; }
+@keyframes qfade { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+.quiz-question { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--forest); margin-bottom: 8px; line-height: 1.3; }
+.quiz-sub { font-size: 12px; color: var(--warm-gray); margin-bottom: 20px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.quiz-option { padding: 10px 14px; border: 1px solid var(--border); background: white; font-size: 12px; color: var(--ink); cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all .15s; }
+.quiz-option:hover { border-color: var(--sage); background: rgba(107,140,94,0.04); }
+.quiz-option.selected { border-color: var(--sage); background: rgba(107,140,94,0.08); }
+.quiz-dot { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid var(--border); flex-shrink: 0; transition: all .15s; }
 .quiz-option.selected .quiz-dot { background: var(--sage); border-color: var(--sage); }
-.quiz-btn { width: 100%; padding: 12px; background: var(--forest); color: var(--parchment); border: none; font-family: var(--sans); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; }
-.quiz-dots { font-size: 10px; color: var(--warm-gray); text-align: center; margin-top: 12px; }
+.quiz-opt-text { font-size: 13px; }
+.quiz-opt-sub { font-size: 11px; color: var(--warm-gray); display: block; margin-top: 1px; }
+.quiz-btn { width: 100%; padding: 12px; background: var(--forest); color: var(--parchment); border: none; font-family: var(--sans); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background .2s; }
+.quiz-btn:hover { background: var(--sage); }
+.quiz-btn:disabled { opacity: .4; cursor: not-allowed; }
+.quiz-dots { font-size: 10px; color: var(--warm-gray); text-align: center; margin-top: 10px; }
+/* EMAIL STEP */
+.quiz-email-intro { background: rgba(45,74,45,0.08); border-left: 2px solid var(--gold); padding: 14px 16px; margin-bottom: 20px; }
+.quiz-email-intro p { font-family: var(--serif); font-size: 14px; font-style: italic; color: var(--forest); line-height: 1.5; }
+.quiz-email-intro span { font-size: 10px; color: var(--warm-gray); display: block; margin-top: 4px; }
+.quiz-form-group { margin-bottom: 12px; }
+.quiz-form-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--warm-gray); display: block; margin-bottom: 5px; }
+.quiz-form-input { width: 100%; padding: 12px 14px; border: 1px solid var(--border); background: white; font-family: var(--sans); font-size: 13px; color: var(--ink); outline: none; transition: border-color .2s; }
+.quiz-form-input:focus { border-color: var(--sage); }
+.quiz-form-input::placeholder { color: var(--warm-gray); opacity: .7; }
+.quiz-legal { font-size: 10px; color: var(--warm-gray); line-height: 1.5; margin-top: 10px; }
+.quiz-submit { width: 100%; padding: 14px; background: var(--gold); color: var(--ink); border: none; font-family: var(--sans); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; cursor: pointer; transition: background .2s; margin-top: 14px; }
+.quiz-submit:hover { background: var(--forest); color: var(--parchment); }
+/* RÉSULTAT INLINE */
+.quiz-result { display: none; }
+.quiz-result.active { display: block; animation: qfade .4s ease; }
+.quiz-result-badge { background: var(--forest); color: var(--sage-lt); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; display: inline-block; margin-bottom: 14px; }
+.quiz-result-title { font-family: var(--serif); font-size: 22px; font-weight: 300; color: var(--forest); line-height: 1.2; margin-bottom: 6px; }
+.quiz-result-title em { font-style: italic; color: var(--gold); }
+.quiz-result-desc { font-size: 12px; color: var(--warm-gray); line-height: 1.7; margin-bottom: 16px; }
+.quiz-result-plants { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.quiz-plant-tag { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--sage); border: 1px solid var(--sage); padding: 2px 8px; }
+.quiz-result-benefits { display: flex; flex-direction: column; gap: 5px; margin-bottom: 18px; }
+.quiz-benefit { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink); }
+.quiz-benefit-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+.quiz-result-cta { background: var(--forest); color: var(--parchment); border: none; padding: 12px 24px; font-family: var(--sans); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; }
+.quiz-result-note { font-size: 11px; color: var(--warm-gray); font-style: italic; margin-top: 12px; }
 
 /* MAGAZINE */
 .magazine { padding: 80px 48px; background: var(--cream); }
@@ -262,31 +299,184 @@ footer { background: var(--ink); padding: 60px 48px 32px; }
   </div>
 </section>
 
+<!-- Netlify Forms détection -->
+<form name="bilan-bien-etre" data-netlify="true" netlify-honeypot="bot-field" style="display:none">
+  <input type="text" name="bot-field"><input type="text" name="prenom">
+  <input type="email" name="email"><input type="hidden" name="symptome">
+  <input type="hidden" name="duree"><input type="hidden" name="experience">
+  <input type="hidden" name="age"><input type="hidden" name="elixir_recommande">
+</form>
+
 <section class="quiz-section" id="bilan">
-  <div>
-    <div class="quiz-kicker">Votre bilan bien-être</div>
-    <h2>Quel élixir est fait pour vous ?</h2>
-    <p>En 5 questions, nous identifions les déséquilibres qui vous concernent et vous recommandons l'élixir le plus adapté à votre situation. Résultat immédiat, sans engagement.</p>
-    <div class="quiz-checks">
-      <div class="quiz-check"><div class="quiz-check-dot">✓</div><span class="quiz-check-label">5 questions seulement</span></div>
-      <div class="quiz-check"><div class="quiz-check-dot">✓</div><span class="quiz-check-label">Résultat personnalisé</span></div>
-      <div class="quiz-check"><div class="quiz-check-dot">✓</div><span class="quiz-check-label">Guide offert par email</span></div>
+  <div class="quiz-inner">
+    <!-- Colonne gauche — présentation -->
+    <div>
+      <div class="quiz-kicker">Votre bilan bien-être</div>
+      <h2>Quel élixir est fait pour vous ?</h2>
+      <p>En 5 questions, nous identifions les déséquilibres qui vous concernent et nous vous recommandons l'élixir le plus adapté à votre situation. Résultat immédiat, guide offert.</p>
+      <div class="quiz-checks">
+        <div class="quiz-check"><div class="quiz-check-dot">✓</div><span class="quiz-check-label">5 questions seulement</span></div>
+        <div class="quiz-check"><div class="quiz-check-dot">✓</div><span class="quiz-check-label">Résultat personnalisé</span></div>
+        <div class="quiz-check"><div class="quiz-check-dot">✓</div><span class="quiz-check-label">Guide offert par email</span></div>
+      </div>
     </div>
-  </div>
-  <div class="quiz-card">
-    <div class="quiz-progress"><div class="quiz-progress-fill"></div></div>
-    <div class="quiz-step-label">Question 2 sur 5</div>
-    <div class="quiz-question">Quel symptôme vous impacte le plus au quotidien ?</div>
-    <div class="quiz-options">
-      <div class="quiz-option"><div class="quiz-dot"></div>Fatigue persistante, manque d'énergie</div>
-      <div class="quiz-option selected"><div class="quiz-dot"></div>Difficultés à m'endormir ou sommeil léger</div>
-      <div class="quiz-option"><div class="quiz-dot"></div>Digestion lourde, ballonnements</div>
-      <div class="quiz-option"><div class="quiz-dot"></div>Anxiété, stress difficile à gérer</div>
+
+    <!-- Colonne droite — quiz fonctionnel -->
+    <div class="quiz-card" id="quiz-card">
+
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="qpfill" style="width:20%"></div></div>
+      <div class="quiz-step-label" id="qslabel">Question 1 sur 5</div>
+
+      <!-- Q1 -->
+      <div class="quiz-step active" id="qs1">
+        <div class="quiz-question">Quelle est votre préoccupation principale ?</div>
+        <div class="quiz-sub">Choisissez ce qui vous correspond le mieux.</div>
+        <div class="quiz-options">
+          <div class="quiz-option" data-v="sommeil" onclick="qSelect(1,this)"><div class="quiz-dot"></div><div><span class="quiz-opt-text">Sommeil difficile, nuits agitées</span><span class="quiz-opt-sub">Difficultés à m'endormir ou réveils fréquents</span></div></div>
+          <div class="quiz-option" data-v="stress" onclick="qSelect(1,this)"><div class="quiz-dot"></div><div><span class="quiz-opt-text">Stress, anxiété, nervosité</span><span class="quiz-opt-sub">Tension intérieure difficile à gérer</span></div></div>
+          <div class="quiz-option" data-v="digestion" onclick="qSelect(1,this)"><div class="quiz-dot"></div><div><span class="quiz-opt-text">Digestion lourde, inconfort intestinal</span><span class="quiz-opt-sub">Ballonnements, lourdeurs, transit irrégulier</span></div></div>
+          <div class="quiz-option" data-v="vitalite" onclick="qSelect(1,this)"><div class="quiz-dot"></div><div><span class="quiz-opt-text">Fatigue, manque d'énergie</span><span class="quiz-opt-sub">Sensation de vide, difficulté à démarrer</span></div></div>
+          <div class="quiz-option" data-v="feminin" onclick="qSelect(1,this)"><div class="quiz-dot"></div><div><span class="quiz-opt-text">Équilibre féminin, ménopause</span><span class="quiz-opt-sub">Bouffées de chaleur, cycle, préménopause</span></div></div>
+        </div>
+        <button class="quiz-btn" id="qbtn1" disabled onclick="qNext(1)">Question suivante →</button>
+        <div class="quiz-dots">● ○ ○ ○ ○</div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-step" id="qs2">
+        <div class="quiz-question">Depuis combien de temps ?</div>
+        <div class="quiz-sub">La durée nous aide à affiner votre recommandation.</div>
+        <div class="quiz-options">
+          <div class="quiz-option" data-v="semaines" onclick="qSelect(2,this)"><div class="quiz-dot"></div><span class="quiz-opt-text">Quelques semaines</span></div>
+          <div class="quiz-option" data-v="mois" onclick="qSelect(2,this)"><div class="quiz-dot"></div><span class="quiz-opt-text">Quelques mois</span></div>
+          <div class="quiz-option" data-v="an" onclick="qSelect(2,this)"><div class="quiz-dot"></div><span class="quiz-opt-text">Plus d'un an</span></div>
+          <div class="quiz-option" data-v="chronique" onclick="qSelect(2,this)"><div class="quiz-dot"></div><span class="quiz-opt-text">Depuis très longtemps, c'est chronique</span></div>
+        </div>
+        <button class="quiz-btn" id="qbtn2" disabled onclick="qNext(2)">Question suivante →</button>
+        <div class="quiz-dots">● ● ○ ○ ○</div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-step" id="qs3">
+        <div class="quiz-question">Avez-vous déjà essayé des compléments naturels ?</div>
+        <div class="quiz-sub">Votre expérience nous permet de mieux vous guider.</div>
+        <div class="quiz-options">
+          <div class="quiz-option" data-v="jamais" onclick="qSelect(3,this)"><div class="quiz-dot"></div><span class="quiz-opt-text">Jamais, première fois</span></div>
+          <div class="quiz-option" data-v="sans-resultat" onclick="qSelect(3,this)"><div class="quiz-dot"></div><span class="quiz-opt-text">Oui, mais sans résultat convaincant</span></div>
+          <div class="quiz-option" data-v="peu-effets" onclick="qSelect(3,this)"><div class="quiz-dot"></div><span class="quiz-opt-text">Oui, avec des effets limités</span></div>
+          <div class="quiz-option" data-v="bons" onclick="qSelect(3,this)"><div class="quiz-dot"></div><span class="quiz-opt-text">Oui, avec de bons résultats</span></div>
+        </div>
+        <button class="quiz-btn" id="qbtn3" disabled onclick="qNext(3)">Question suivante →</button>
+        <div class="quiz-dots">● ● ● ○ ○</div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="quiz-step" id="qs4">
+        <div class="quiz-question">Dans quelle tranche d'âge vous situez-vous ?</div>
+        <div class="quiz-sub">Certains élixirs sont particulièrement adaptés à chaque étape de vie.</div>
+        <div class="quiz-options">
+          <div class="quiz-option" data-v="18-35" onclick="qSelect(4,this)"><div class="quiz-dot"></div><span class="quiz-opt-text">18 – 35 ans</span></div>
+          <div class="quiz-option" data-v="36-50" onclick="qSelect(4,this)"><div class="quiz-dot"></div><span class="quiz-opt-text">36 – 50 ans</span></div>
+          <div class="quiz-option" data-v="51-65" onclick="qSelect(4,this)"><div class="quiz-dot"></div><span class="quiz-opt-text">51 – 65 ans</span></div>
+          <div class="quiz-option" data-v="65+" onclick="qSelect(4,this)"><div class="quiz-dot"></div><span class="quiz-opt-text">65 ans et plus</span></div>
+        </div>
+        <button class="quiz-btn" id="qbtn4" disabled onclick="qNext(4)">Dernière étape →</button>
+        <div class="quiz-dots">● ● ● ● ○</div>
+      </div>
+
+      <!-- Q5 — Email -->
+      <div class="quiz-step" id="qs5">
+        <div class="quiz-question">Votre résultat est prêt.</div>
+        <div class="quiz-email-intro">
+          <p>"Chaque déséquilibre a sa plante. Chaque plante, son élixir."</p>
+          <span>— Vincent Lauvergne, herboriste-distillateur depuis 1999</span>
+        </div>
+        <form name="bilan-bien-etre" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="qSubmit(event)">
+          <input type="hidden" name="form-name" value="bilan-bien-etre">
+          <input type="text" name="bot-field" style="display:none">
+          <input type="hidden" name="symptome" id="qf-symptome">
+          <input type="hidden" name="duree" id="qf-duree">
+          <input type="hidden" name="experience" id="qf-experience">
+          <input type="hidden" name="age" id="qf-age">
+          <input type="hidden" name="elixir_recommande" id="qf-elixir">
+          <div class="quiz-form-group">
+            <label class="quiz-form-label">Votre prénom</label>
+            <input type="text" name="prenom" id="qf-prenom" class="quiz-form-input" placeholder="Marie" required>
+          </div>
+          <div class="quiz-form-group">
+            <label class="quiz-form-label">Votre adresse email</label>
+            <input type="email" name="email" id="qf-email" class="quiz-form-input" placeholder="marie@exemple.fr" required>
+          </div>
+          <div class="quiz-legal">En soumettant ce formulaire, vous acceptez de recevoir votre recommandation et les conseils Spagybio. Désabonnement à tout moment. Données confidentielles — RGPD.</div>
+          <button type="submit" class="quiz-submit">Recevoir ma recommandation →</button>
+        </form>
+        <div class="quiz-dots">● ● ● ● ●</div>
+      </div>
+
+      <!-- Résultat -->
+      <div class="quiz-result" id="qresult">
+        <div class="quiz-result-badge">Votre élixir personnalisé</div>
+        <div class="quiz-result-title">Bonjour <span id="qr-prenom"></span>,<br>voici <em id="qr-name"></em></div>
+        <div class="quiz-result-desc" id="qr-desc"></div>
+        <div class="quiz-result-plants" id="qr-plants"></div>
+        <div class="quiz-result-benefits" id="qr-benefits"></div>
+        <a href="#" class="quiz-result-cta">Découvrir cet élixir →</a>
+        <div class="quiz-result-note">📩 Votre recommandation complète + guide offert arrivent dans votre boîte mail.</div>
+      </div>
+
     </div>
-    <button class="quiz-btn">Question suivante →</button>
-    <div class="quiz-dots">● ● ○ ○ ○</div>
   </div>
 </section>
+
+<script>
+const qAnswers = {};
+const qElixirs = {
+  sommeil:{name:"Sérénité Nocturne",desc:"Mélisse, Valériane et Passiflore réunis par la spagyrie pour retrouver un sommeil profond et réparateur, naturellement.",plants:["Mélisse","Valériane","Passiflore"],benefits:["Aide à l'endormissement","Réduit les réveils nocturnes","Apaise le mental","Sans accoutumance"]},
+  stress:{name:"Équilibre & Sérénité",desc:"Aubépine, Lavande et Rhodiole pour retrouver un ancrage naturel face aux tensions du quotidien et renforcer votre résistance au stress.",plants:["Aubépine","Lavande","Rhodiole"],benefits:["Diminue l'anxiété","Stabilise l'humeur","Renforce la résistance au stress","Soutient le système nerveux"]},
+  digestion:{name:"Confort Digestif",desc:"Romarin, Mélisse et Fenouil distillés selon le procédé spagyrique pour une digestion légère et un confort intestinal retrouvé.",plants:["Romarin","Mélisse","Fenouil"],benefits:["Réduit les ballonnements","Facilite la digestion","Apaise les spasmes","Régule le transit"]},
+  vitalite:{name:"Les 7 Simples",desc:"La formule historique de Spagybio depuis 1999. Sept plantes aromatiques bio pour recharger l'énergie vitale en profondeur.",plants:["Thym","Romarin","Sauge","Lavande","Marjolaine"],benefits:["Boost d'énergie naturel","Soutient l'immunité","Améliore la clarté mentale","Renforce la vitalité"]},
+  feminin:{name:"Équilibre Femme",desc:"Sauge, Actée à grappes et Houblon pour accompagner en douceur la ménopause, la préménopause et les cycles irréguliers.",plants:["Sauge","Actée à grappes","Houblon"],benefits:["Atténue les bouffées de chaleur","Régule les cycles","Soutient l'équilibre hormonal","Apaise les troubles de l'humeur"]}
+};
+function qSelect(step, el) {
+  document.querySelectorAll('#qs'+step+' .quiz-option').forEach(o=>o.classList.remove('selected'));
+  el.classList.add('selected');
+  qAnswers[step] = el.dataset.v;
+  document.getElementById('qbtn'+step).disabled = false;
+}
+function qNext(cur) {
+  document.getElementById('qs'+cur).classList.remove('active');
+  const next = cur+1;
+  document.getElementById('qs'+next).classList.add('active');
+  document.getElementById('qpfill').style.width = ((next/5)*100)+'%';
+  document.getElementById('qslabel').textContent = next<5 ? 'Question '+next+' sur 5' : 'Dernière étape — votre résultat';
+  if(next===5){
+    document.getElementById('qf-symptome').value=qAnswers[1]||'';
+    document.getElementById('qf-duree').value=qAnswers[2]||'';
+    document.getElementById('qf-experience').value=qAnswers[3]||'';
+    document.getElementById('qf-age').value=qAnswers[4]||'';
+    document.getElementById('qf-elixir').value=qElixirs[qAnswers[1]]?.name||'';
+  }
+  document.getElementById('quiz-card').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function qSubmit(e) {
+  e.preventDefault();
+  const prenom = document.getElementById('qf-prenom').value.trim();
+  if(!prenom) return;
+  const fd = new FormData(e.target);
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(fd).toString()}).catch(()=>{});
+  document.getElementById('qs5').classList.remove('active');
+  document.getElementById('qslabel').textContent = 'Votre recommandation personnalisée';
+  document.getElementById('qpfill').style.width = '100%';
+  const el = qElixirs[qAnswers[1]||'vitalite'];
+  document.getElementById('qr-prenom').textContent = prenom;
+  document.getElementById('qr-name').textContent = el.name;
+  document.getElementById('qr-desc').textContent = el.desc;
+  document.getElementById('qr-plants').innerHTML = el.plants.map(p=>'<span class="quiz-plant-tag">'+p+'</span>').join('');
+  document.getElementById('qr-benefits').innerHTML = el.benefits.map(b=>'<div class="quiz-benefit"><div class="quiz-benefit-dot"></div>'+b+'</div>').join('');
+  document.getElementById('qresult').classList.add('active');
+  document.getElementById('quiz-card').scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
 
 <section class="magazine">
   <div class="section-header">
