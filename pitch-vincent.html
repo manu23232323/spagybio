@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spagybio — Stratégie Digitale · Présentation Investisseur</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest: #1e3a21;
+  --forest-lt: #2D4A2D;
+  --sage: #5a7a4e;
+  --sage-lt: #8aaa7e;
+  --gold: #b8955a;
+  --gold-lt: #e8d5b0;
+  --ink: #0e1810;
+  --parchment: #f5f0e8;
+  --cream: #faf7f2;
+  --warm-gray: #8c8678;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Jost', system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--ink); font-family: var(--sans); font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+
+/* ── NAVIGATION SLIDES ── */
+#deck { width: 100vw; }
+.slide { min-height: 100vh; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+
+/* ── SLIDE 1 — COVER ── */
+.s1 { background: var(--forest); justify-content: center; align-items: center; text-align: center; }
+.s1-bg { position: absolute; inset: 0; background:
+  radial-gradient(ellipse at 20% 50%, rgba(90,122,78,0.25) 0%, transparent 60%),
+  radial-gradient(ellipse at 80% 30%, rgba(184,149,90,0.15) 0%, transparent 50%); }
+.s1-border { position: absolute; inset: 24px; border: 1px solid rgba(184,149,90,0.2); pointer-events: none; }
+.s1-border::before { content: ''; position: absolute; inset: 8px; border: 1px solid rgba(184,149,90,0.1); }
+.s1-content { position: relative; z-index: 2; padding: 48px; }
+.s1-eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--sage-lt); margin-bottom: 32px; display: flex; align-items: center; justify-content: center; gap: 16px; }
+.s1-eyebrow::before, .s1-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--sage-lt); }
+.s1-title { font-family: var(--serif); font-size: clamp(48px, 7vw, 80px); font-weight: 300; color: var(--parchment); line-height: 1.05; margin-bottom: 16px; }
+.s1-title em { font-style: italic; color: var(--gold-lt); }
+.s1-subtitle { font-family: var(--serif); font-size: clamp(18px, 2.5vw, 26px); font-style: italic; font-weight: 300; color: rgba(245,240,232,0.55); margin-bottom: 56px; }
+.s1-meta { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
+.s1-meta-item { text-align: center; }
+.s1-meta-num { font-family: var(--serif); font-size: 36px; font-weight: 300; color: var(--gold); line-height: 1; }
+.s1-meta-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage-lt); margin-top: 4px; }
+.s1-divider { width: 1px; height: 50px; background: rgba(184,149,90,0.3); }
+.s1-presenter { position: absolute; bottom: 48px; right: 56px; text-align: right; }
+.s1-presenter-name { font-family: var(--serif); font-size: 16px; font-style: italic; color: var(--parchment); }
+.s1-presenter-role { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--warm-gray); margin-top: 2px; }
+.s1-date { position: absolute; bottom: 48px; left: 56px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--warm-gray); }
+
+/* ── SLIDE 2 — CONSTAT ── */
+.s2 { background: var(--parchment); flex-direction: row; }
+.s2-left { width: 45%; background: var(--forest-lt); padding: 80px 56px; display: flex; flex-direction: column; justify-content: center; }
+.s2-right { flex: 1; padding: 80px 56px; display: flex; flex-direction: column; justify-content: center; }
+.slide-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage-lt); margin-bottom: 20px; }
+.slide-title { font-family: var(--serif); font-size: clamp(28px, 3.5vw, 42px); font-weight: 300; line-height: 1.2; margin-bottom: 28px; }
+.slide-title.light { color: var(--parchment); }
+.slide-title.dark { color: var(--forest); }
+.slide-title em { font-style: italic; color: var(--gold); }
+.problem-list { display: flex; flex-direction: column; gap: 12px; }
+.problem-item { display: flex; gap: 14px; align-items: flex-start; }
+.problem-icon { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+.problem-icon.bad { background: rgba(192,57,43,0.15); color: #c0392b; font-weight: 600; }
+.problem-icon.good { background: rgba(90,122,78,0.2); color: var(--sage); font-weight: 600; }
+.problem-text { font-size: 14px; line-height: 1.6; }
+.problem-text.light { color: rgba(245,240,232,0.75); }
+.problem-text.dark { color: #4a4840; }
+.problem-text strong { font-weight: 500; }
+.problem-text.light strong { color: var(--parchment); }
+.problem-text.dark strong { color: var(--forest); }
+.section-divider { width: 40px; height: 2px; background: var(--gold); margin: 24px 0; }
+
+/* ── SLIDE 3 — PHILOSOPHIE SITE ── */
+.s3 { background: var(--cream); }
+.s3-inner { padding: 80px; max-width: 1200px; margin: 0 auto; width: 100%; }
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; }
+.pillar { padding: 36px 28px; position: relative; overflow: hidden; }
+.pillar-num { font-family: var(--serif); font-size: 64px; font-weight: 300; font-style: italic; position: absolute; top: 20px; right: 24px; line-height: 1; opacity: 0.12; }
+.pillar-1 { background: var(--forest); }
+.pillar-1 .pillar-num { color: var(--sage-lt); }
+.pillar-2 { background: var(--parchment); }
+.pillar-2 .pillar-num { color: var(--forest); }
+.pillar-3 { background: var(--forest-lt); }
+.pillar-3 .pillar-num { color: var(--sage-lt); }
+.pillar-icon { font-size: 28px; margin-bottom: 16px; }
+.pillar-title { font-family: var(--serif); font-size: 22px; font-weight: 400; margin-bottom: 10px; line-height: 1.3; }
+.pillar-title.light { color: var(--parchment); }
+.pillar-title.dark { color: var(--forest); }
+.pillar-desc { font-size: 13px; line-height: 1.7; }
+.pillar-desc.light { color: rgba(245,240,232,0.65); }
+.pillar-desc.dark { color: var(--warm-gray); }
+.big-quote { font-family: var(--serif); font-size: clamp(20px, 2.5vw, 28px); font-style: italic; font-weight: 300; color: var(--forest); line-height: 1.4; max-width: 800px; border-left: 3px solid var(--gold); padding-left: 28px; margin: 48px 0 0; }
+
+/* ── SLIDE 4 — LE TUNNEL ── */
+.s4 { background: var(--ink); }
+.s4-inner { padding: 72px 80px; }
+.tunnel-flow { display: flex; flex-direction: column; gap: 0; margin-top: 40px; }
+.tunnel-row { display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start; }
+.tunnel-connector { display: flex; flex-direction: column; align-items: center; padding: 8px 0; }
+.tunnel-connector-line { width: 2px; height: 32px; background: linear-gradient(to bottom, var(--gold), rgba(184,149,90,0.3)); margin: 0 auto; }
+.tunnel-step { display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start; margin-bottom: 0; }
+.tunnel-step-label { text-align: right; padding-top: 14px; }
+.tunnel-step-channel { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.tunnel-step-source { font-size: 11px; color: rgba(245,240,232,0.35); }
+.tunnel-step-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(184,149,90,0.2); border-left: 3px solid var(--gold); padding: 16px 20px; }
+.tunnel-step-card-title { font-family: var(--serif); font-size: 18px; color: var(--parchment); margin-bottom: 4px; }
+.tunnel-step-card-desc { font-size: 12px; color: rgba(245,240,232,0.5); line-height: 1.6; }
+.tunnel-arrow { text-align: center; color: var(--gold); font-size: 20px; padding: 4px 0 4px 232px; opacity: 0.7; }
+.tunnel-split { display: grid; grid-template-columns: 200px 1fr 1fr; gap: 16px; align-items: start; margin-top: 0; }
+.tunnel-split-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(90,122,78,0.3); border-left: 3px solid var(--sage); padding: 14px 18px; }
+.tunnel-split-card.gold-border { border-left-color: var(--gold); border-color: rgba(184,149,90,0.3); }
+
+/* ── SLIDE 5 — LE SITE ── */
+.s5 { background: var(--parchment); }
+.s5-inner { padding: 72px 80px; }
+.site-layers { display: flex; flex-direction: column; gap: 2px; margin-top: 40px; }
+.site-layer { display: grid; grid-template-columns: 48px 1fr auto; gap: 20px; align-items: center; padding: 18px 24px; }
+.site-layer-num { font-family: var(--serif); font-size: 28px; font-style: italic; font-weight: 300; color: var(--gold); text-align: center; }
+.site-layer-info {}
+.site-layer-name { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--forest); }
+.site-layer-desc { font-size: 12px; color: var(--warm-gray); margin-top: 2px; }
+.site-layer-tag { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; white-space: nowrap; }
+.layer-1 { background: rgba(45,74,45,0.08); }
+.layer-2 { background: rgba(45,74,45,0.05); }
+.layer-3 { background: rgba(45,74,45,0.08); }
+.layer-4 { background: rgba(184,149,90,0.08); }
+.layer-5 { background: rgba(45,74,45,0.05); }
+.layer-6 { background: rgba(45,74,45,0.08); }
+.layer-7 { background: rgba(184,149,90,0.12); }
+.tag-lead { background: rgba(45,74,45,0.15); color: var(--forest); border: 1px solid rgba(45,74,45,0.2); }
+.tag-achat { background: rgba(184,149,90,0.2); color: #7a5a20; border: 1px solid rgba(184,149,90,0.3); }
+.tag-seo { background: rgba(26,94,180,0.1); color: #1a5eb4; border: 1px solid rgba(26,94,180,0.2); }
+.tag-confiance { background: rgba(140,134,120,0.15); color: var(--warm-gray); border: 1px solid rgba(140,134,120,0.3); }
+
+/* ── SLIDE 6 — EMAIL SÉQUENCE ── */
+.s6 { background: var(--forest); }
+.s6-inner { padding: 72px 80px; }
+.email-timeline { display: flex; gap: 0; margin-top: 40px; align-items: stretch; }
+.email-item { flex: 1; position: relative; }
+.email-item::after { content: '→'; position: absolute; right: -12px; top: 50%; transform: translateY(-50%); color: var(--gold); font-size: 16px; z-index: 2; }
+.email-item:last-child::after { display: none; }
+.email-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 20px 16px; height: 100%; margin-right: 24px; }
+.email-item:last-child .email-card { margin-right: 0; }
+.email-day { font-family: var(--serif); font-size: 24px; font-style: italic; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+.email-type { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage-lt); margin-bottom: 8px; }
+.email-subject { font-size: 12px; color: var(--parchment); line-height: 1.5; margin-bottom: 8px; font-weight: 400; }
+.email-goal { font-size: 11px; color: rgba(245,240,232,0.45); line-height: 1.4; }
+.email-star { background: rgba(184,149,90,0.2); border-color: rgba(184,149,90,0.4) !important; }
+.email-star .email-type { color: var(--gold-lt); }
+.two-tunnels { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+.tunnel-type { padding: 20px 24px; border: 1px solid rgba(255,255,255,0.1); }
+.tunnel-type-title { font-family: var(--serif); font-size: 18px; color: var(--parchment); margin-bottom: 6px; }
+.tunnel-type-sub { font-size: 11px; color: rgba(245,240,232,0.5); line-height: 1.6; }
+.tunnel-type-badge { display: inline-block; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; padding: 2px 8px; margin-bottom: 10px; }
+.badge-pull { background: rgba(90,122,78,0.25); color: var(--sage-lt); }
+.badge-push { background: rgba(184,149,90,0.2); color: var(--gold-lt); }
+
+/* ── SLIDE 7 — NATUROPATHE ── */
+.s7 { background: var(--cream); }
+.s7-inner { padding: 72px 80px; }
+.natro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+.natro-visual { background: var(--forest); padding: 40px; display: flex; flex-direction: column; justify-content: space-between; }
+.natro-flow { display: flex; flex-direction: column; gap: 0; }
+.natro-step { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.natro-step:last-child { border-bottom: none; }
+.natro-step-icon { font-size: 20px; min-width: 32px; }
+.natro-step-text { font-size: 13px; color: rgba(245,240,232,0.75); line-height: 1.6; }
+.natro-step-text strong { color: var(--parchment); font-weight: 400; }
+.natro-benefits { display: flex; flex-direction: column; gap: 14px; }
+.natro-benefit { display: flex; gap: 16px; padding: 16px 20px; background: rgba(255,255,255,0.04); border-left: 2px solid var(--sage); }
+.natro-benefit-title { font-size: 13px; font-weight: 500; color: var(--forest); margin-bottom: 3px; }
+.natro-benefit-desc { font-size: 12px; color: var(--warm-gray); line-height: 1.5; }
+.natro-benefit-icon { font-size: 22px; flex-shrink: 0; }
+.natro-quote { font-family: var(--serif); font-size: 14px; font-style: italic; color: var(--sage-lt); margin-top: 28px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; line-height: 1.6; }
+
+/* ── SLIDE 8 — ROADMAP ── */
+.s8 { background: var(--ink); }
+.s8-inner { padding: 72px 80px; }
+.roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 40px; }
+.roadmap-phase { padding: 28px 24px; }
+.roadmap-phase-1 { background: rgba(45,74,45,0.3); }
+.roadmap-phase-2 { background: rgba(45,74,45,0.2); }
+.roadmap-phase-3 { background: rgba(45,74,45,0.12); }
+.roadmap-phase-4 { background: rgba(45,74,45,0.07); }
+.phase-period { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.phase-title { font-family: var(--serif); font-size: 20px; color: var(--parchment); margin-bottom: 16px; line-height: 1.2; }
+.phase-items { display: flex; flex-direction: column; gap: 8px; }
+.phase-item { display: flex; gap: 10px; font-size: 12px; color: rgba(245,240,232,0.6); line-height: 1.5; }
+.phase-item::before { content: '→'; color: var(--sage-lt); flex-shrink: 0; }
+.phase-item strong { color: var(--parchment); font-weight: 400; }
+.kpi-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; margin-top: 24px; }
+.kpi-item { background: rgba(255,255,255,0.04); padding: 16px 18px; text-align: center; }
+.kpi-value { font-family: var(--serif); font-size: 24px; font-weight: 300; color: var(--gold); line-height: 1; }
+.kpi-label { font-size: 10px; color: rgba(245,240,232,0.4); margin-top: 4px; line-height: 1.4; }
+
+/* ── SLIDE 9 — PROPOSITION ── */
+.s9 { background: var(--forest); justify-content: center; align-items: center; text-align: center; }
+.s9-bg { position: absolute; inset: 0; background:
+  radial-gradient(ellipse at 50% 0%, rgba(184,149,90,0.12) 0%, transparent 60%),
+  radial-gradient(ellipse at 50% 100%, rgba(90,122,78,0.2) 0%, transparent 50%); }
+.s9-content { position: relative; z-index: 2; padding: 80px 48px; max-width: 900px; }
+.s9-label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--sage-lt); margin-bottom: 32px; display: flex; align-items: center; justify-content: center; gap: 16px; }
+.s9-label::before, .s9-label::after { content: ''; width: 40px; height: 1px; background: var(--sage-lt); }
+.s9-title { font-family: var(--serif); font-size: clamp(36px, 5vw, 60px); font-weight: 300; color: var(--parchment); line-height: 1.1; margin-bottom: 40px; }
+.s9-title em { font-style: italic; color: var(--gold-lt); }
+.apports { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 48px; }
+.apport { padding: 28px 32px; text-align: left; }
+.apport-1 { background: rgba(255,255,255,0.06); }
+.apport-2 { background: rgba(184,149,90,0.12); }
+.apport-who { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+.apport-1 .apport-who { color: var(--sage-lt); }
+.apport-2 .apport-who { color: var(--gold-lt); }
+.apport-items { display: flex; flex-direction: column; gap: 8px; }
+.apport-item { display: flex; gap: 10px; font-size: 13px; color: rgba(245,240,232,0.7); line-height: 1.5; align-items: flex-start; }
+.apport-item::before { content: '✓'; flex-shrink: 0; font-size: 11px; margin-top: 2px; }
+.apport-1 .apport-item::before { color: var(--sage-lt); }
+.apport-2 .apport-item::before { color: var(--gold); }
+.apport-item strong { color: var(--parchment); font-weight: 400; }
+.s9-next { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.s9-next-title { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage-lt); margin-bottom: 8px; }
+.s9-steps { display: flex; gap: 2px; }
+.s9-step { background: rgba(255,255,255,0.05); padding: 12px 20px; font-size: 12px; color: rgba(245,240,232,0.65); }
+.s9-step span { display: block; font-family: var(--serif); font-size: 16px; color: var(--gold); margin-bottom: 4px; font-style: italic; }
+
+/* ── NAV DOTS ── */
+.nav-dots { position: fixed; right: 24px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; z-index: 100; }
+.nav-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.25); cursor: pointer; transition: all 0.2s; }
+.nav-dot.active { background: var(--gold); transform: scale(1.4); }
+.nav-dot:hover { background: rgba(255,255,255,0.6); }
+
+/* ── SLIDE HEADER ── */
+.slide-header { position: absolute; top: 0; left: 0; right: 0; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; z-index: 10; }
+.slide-header-brand { font-family: var(--serif); font-size: 14px; letter-spacing: 3px; text-transform: uppercase; }
+.slide-header-brand.light { color: rgba(245,240,232,0.3); }
+.slide-header-brand.dark { color: rgba(45,74,45,0.3); }
+.slide-header-num { font-size: 11px; letter-spacing: 2px; }
+.slide-header-num.light { color: rgba(245,240,232,0.2); }
+.slide-header-num.dark { color: rgba(45,74,45,0.2); }
+</style>
+</head>
+<body>
+
+<!-- NAV DOTS -->
+<nav class="nav-dots" id="nav-dots">
+  <div class="nav-dot active" onclick="scrollToSlide(0)" title="Couverture"></div>
+  <div class="nav-dot" onclick="scrollToSlide(1)" title="Constat"></div>
+  <div class="nav-dot" onclick="scrollToSlide(2)" title="Philosophie"></div>
+  <div class="nav-dot" onclick="scrollToSlide(3)" title="Le tunnel"></div>
+  <div class="nav-dot" onclick="scrollToSlide(4)" title="Le site"></div>
+  <div class="nav-dot" onclick="scrollToSlide(5)" title="Séquence email"></div>
+  <div class="nav-dot" onclick="scrollToSlide(6)" title="Naturopathe"></div>
+  <div class="nav-dot" onclick="scrollToSlide(7)" title="Roadmap"></div>
+  <div class="nav-dot" onclick="scrollToSlide(8)" title="Proposition"></div>
+</nav>
+
+<div id="deck">
+
+<!-- ═══ SLIDE 1 — COUVERTURE ═══ -->
+<section class="slide s1" id="slide-0">
+  <div class="s1-bg"></div>
+  <div class="s1-border"></div>
+  <div class="s1-content">
+    <div class="s1-eyebrow">Stratégie digitale · Mars 2026</div>
+    <h1 class="s1-title">Spagybio<br><em>Passer à l'échelle</em></h1>
+    <p class="s1-subtitle">Du savoir-faire artisanal au système d'acquisition digital</p>
+    <div class="s1-meta">
+      <div class="s1-meta-item">
+        <div class="s1-meta-num">25</div>
+        <div class="s1-meta-label">Ans d'expertise</div>
+      </div>
+      <div class="s1-divider"></div>
+      <div class="s1-meta-item">
+        <div class="s1-meta-num">30+</div>
+        <div class="s1-meta-label">Élixirs créés</div>
+      </div>
+      <div class="s1-divider"></div>
+      <div class="s1-meta-item">
+        <div class="s1-meta-num">600M</div>
+        <div class="s1-meta-label">Visiteurs Taboola/jour</div>
+      </div>
+      <div class="s1-divider"></div>
+      <div class="s1-meta-item">
+        <div class="s1-meta-num">600€</div>
+        <div class="s1-meta-label">Budget test initial</div>
+      </div>
+    </div>
+  </div>
+  <div class="s1-presenter">
+    <div class="s1-presenter-name">Investisseur opérationnel</div>
+    <div class="s1-presenter-role">Développement commercial · Digital</div>
+  </div>
+  <div class="s1-date">Visio stratégique · Mars 2026</div>
+</section>
+
+<!-- ═══ SLIDE 2 — CONSTAT ═══ -->
+<section class="slide s2" id="slide-1">
+  <div class="s2-left">
+    <div class="slide-label">01 — Le constat</div>
+    <h2 class="slide-title light">Le site actuel dit<br>"je vends".<br><em>Il faut qu'il dise<br>"je sais".</em></h2>
+    <div class="section-divider"></div>
+    <div class="problem-list">
+      <div class="problem-item">
+        <div class="problem-icon bad">✗</div>
+        <div class="problem-text light"><strong>Prix visibles dès la homepage</strong> — le visiteur froid part avant d'avoir compris le produit</div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon bad">✗</div>
+        <div class="problem-text light"><strong>Zéro pixel de tracking</strong> — aucune donnée sur qui visite, aucun retargeting possible</div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon bad">✗</div>
+        <div class="problem-text light"><strong>Navigation à 8 rubriques</strong> — le visiteur se perd, le quiz bilan est inexploité</div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon bad">✗</div>
+        <div class="problem-text light"><strong>Aucune landing page sans menu</strong> — incompatible avec Taboola et Meta Ads</div>
+      </div>
+    </div>
+  </div>
+  <div class="s2-right">
+    <div class="slide-label" style="color:var(--sage);">Les atouts sont là</div>
+    <h2 class="slide-title dark">Spagybio a<br><em>tout ce qu'il faut</em><br>pour performer.</h2>
+    <div class="section-divider" style="background:var(--forest)"></div>
+    <div class="problem-list">
+      <div class="problem-item">
+        <div class="problem-icon good">✓</div>
+        <div class="problem-text dark"><strong>Story de marque exceptionnelle</strong> — Vincent Lauvergne, Auvergne, 25 ans, guérison personnelle</div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon good">✓</div>
+        <div class="problem-text dark"><strong>Articles de blog existants</strong> — "Détox foie", "Fatigue digestive" → parfaits comme articles ponts Taboola</div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon good">✓</div>
+        <div class="problem-text dark"><strong>6 témoignages clients authentiques</strong> — preuve sociale réelle, rare pour un produit de niche</div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon good">✓</div>
+        <div class="problem-text dark"><strong>Gamme segmentée</strong> — Sommeil, Détox, Ménopause, Digestion → un funnel distinct par symptôme</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 3 — PHILOSOPHIE DU SITE ═══ -->
+<section class="slide s3" id="slide-2">
+  <div class="slide-header">
+    <div class="slide-header-brand dark">Spagybio</div>
+    <div class="slide-header-num dark">02 · Philosophie</div>
+  </div>
+  <div class="s3-inner">
+    <div class="slide-label" style="color:var(--sage)">02 — La philosophie du nouveau site</div>
+    <h2 class="slide-title dark">Un <em>média de savoir</em>,<br>pas une boutique.</h2>
+    <div class="pillars">
+      <div class="pillar pillar-1">
+        <div class="pillar-num">1</div>
+        <div class="pillar-icon">📖</div>
+        <div class="pillar-title light">Éduquer d'abord</div>
+        <div class="pillar-desc light">La spagyrie est inconnue du grand public. Le site doit expliquer avant de vendre. Le visiteur qui comprend le procédé est prêt à payer le prix premium. Zéro prix sur la homepage.</div>
+      </div>
+      <div class="pillar pillar-2">
+        <div class="pillar-num">2</div>
+        <div class="pillar-icon" style="color:var(--forest)">🎯</div>
+        <div class="pillar-title dark">Capturer les leads</div>
+        <div class="pillar-desc dark">Le quiz "Quel élixir vous correspond ?" capture le symptôme principal et l'email. Chaque complétion déclenche une séquence email personnalisée. C'est le cœur du système d'acquisition.</div>
+      </div>
+      <div class="pillar pillar-3">
+        <div class="pillar-num">3</div>
+        <div class="pillar-icon">🔄</div>
+        <div class="pillar-title light">Convertir en douceur</div>
+        <div class="pillar-desc light">Le produit ne se vend pas en 30 secondes — il se vend en 12 à 30 jours, via une séquence email éducative qui amène naturellement à l'achat. Le site plante la graine. L'email la fait pousser.</div>
+      </div>
+    </div>
+    <div class="big-quote">
+      "Spagybio est un média de savoir sur la spagyrie. La boutique est secondaire. <br>Le contenu est roi."
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 4 — LE TUNNEL ═══ -->
+<section class="slide s4" id="slide-3">
+  <div class="slide-header">
+    <div class="slide-header-brand light">Spagybio</div>
+    <div class="slide-header-num light">03 · Le Tunnel</div>
+  </div>
+  <div class="s4-inner">
+    <div class="slide-label" style="color:var(--gold)">03 — Architecture du tunnel complet</div>
+    <h2 class="slide-title" style="color:var(--parchment)">De la pub native à la<br><em style="color:var(--gold-lt)">commande en 4 étapes.</em></h2>
+
+    <div class="tunnel-flow">
+      <div class="tunnel-step">
+        <div class="tunnel-step-label">
+          <div class="tunnel-step-channel">Taboola · Realize</div>
+          <div class="tunnel-step-source">Le Monde, BFM, L'Express…</div>
+        </div>
+        <div class="tunnel-step-card">
+          <div class="tunnel-step-card-title">🎯 Annonce native</div>
+          <div class="tunnel-step-card-desc">Image + titre style éditorial — "7 signes que votre foie est surchargé" · CPC moyen 0,15–0,35€ · 600M visiteurs/jour sur 9 000 sites partenaires</div>
+        </div>
+      </div>
+      <div class="tunnel-arrow">↓</div>
+      <div class="tunnel-step">
+        <div class="tunnel-step-label">
+          <div class="tunnel-step-channel">Article pont</div>
+          <div class="tunnel-step-source">SEO + Taboola simultanément</div>
+        </div>
+        <div class="tunnel-step-card">
+          <div class="tunnel-step-card-title">📖 Article éducatif</div>
+          <div class="tunnel-step-card-desc">800–1200 mots · Zéro prix · Problème de santé précis → solution naturelle → 1 seul CTA vers la LP · Même page pour le trafic organique Google</div>
+        </div>
+      </div>
+      <div class="tunnel-arrow">↓ · Deux chemins ·</div>
+      <div class="tunnel-split">
+        <div></div>
+        <div class="tunnel-split-card gold-border">
+          <div class="tunnel-step-card-title" style="color:var(--parchment);font-size:16px">🛒 Landing page → Commande Stripe</div>
+          <div class="tunnel-step-card-desc">Acheteur impulsif · Convertit en 3 minutes · Menu masqué si UTM Taboola · Garantie 30j · Livraison offerte</div>
+        </div>
+        <div class="tunnel-split-card">
+          <div class="tunnel-step-card-title" style="color:var(--parchment);font-size:16px">📧 Quiz → Séquence email</div>
+          <div class="tunnel-step-card-desc">Acheteur réfléchi · Convertit en 12–30j · Symptôme capturé → séquence personnalisée Brevo · Guide PDF offert</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 5 — LE SITE ═══ -->
+<section class="slide s5" id="slide-4">
+  <div class="slide-header">
+    <div class="slide-header-brand dark">Spagybio</div>
+    <div class="slide-header-num dark">04 · Le Site</div>
+  </div>
+  <div class="s5-inner">
+    <div class="slide-label" style="color:var(--sage)">04 — Architecture du site</div>
+    <h2 class="slide-title dark">Le site est le<br><em>socle de tout</em> le système.</h2>
+    <div class="site-layers">
+      <div class="site-layer layer-1">
+        <div class="site-layer-num">1</div>
+        <div class="site-layer-info">
+          <div class="site-layer-name">Hero — L'art ancien de retrouver l'équilibre</div>
+          <div class="site-layer-desc">Planche botanique médiévale · Zéro prix · CTA vers le quiz · "Notre histoire" → Vincent Lauvergne</div>
+        </div>
+        <div class="site-layer-tag tag-confiance">Storytelling</div>
+      </div>
+      <div class="site-layer layer-2">
+        <div class="site-layer-num">2</div>
+        <div class="site-layer-info">
+          <div class="site-layer-name">Quiz Bilan Bien-Être — 5 questions interactives</div>
+          <div class="site-layer-desc">Symptôme capturé → Prénom + Email → Élixir recommandé · Connecté à Netlify Forms → Brevo automatique</div>
+        </div>
+        <div class="site-layer-tag tag-lead">Machine à leads</div>
+      </div>
+      <div class="site-layer layer-3">
+        <div class="site-layer-num">3</div>
+        <div class="site-layer-info">
+          <div class="site-layer-name">Le Magazine — Articles ponts Taboola</div>
+          <div class="site-layer-desc">"La Spagyrie" · "Détox foie naturel" · À venir : Sommeil, Ménopause, Digestion · 1 article = 3 canaux</div>
+        </div>
+        <div class="site-layer-tag tag-seo">SEO + Taboola</div>
+      </div>
+      <div class="site-layer layer-4">
+        <div class="site-layer-num">4</div>
+        <div class="site-layer-info">
+          <div class="site-layer-name">Section Vincent Lauvergne — Portrait, timeline, livres</div>
+          <div class="site-layer-desc">25 ans · Guérison à 23 ans · 2 ouvrages publiés · Crédibilité et preuve d'expertise unique en France</div>
+        </div>
+        <div class="site-layer-tag tag-confiance">Crédibilité</div>
+      </div>
+      <div class="site-layer layer-5">
+        <div class="site-layer-num">5</div>
+        <div class="site-layer-info">
+          <div class="site-layer-name">Newsletter + Lead Magnet — Guide des 7 plantes</div>
+          <div class="site-layer-desc">PDF offert à l'inscription · Entrée douce dans la séquence email · Segmentation par symptôme</div>
+        </div>
+        <div class="site-layer-tag tag-lead">Capture email</div>
+      </div>
+      <div class="site-layer layer-6">
+        <div class="site-layer-num">6</div>
+        <div class="site-layer-info">
+          <div class="site-layer-name">Élixirs — Aperçu sans prix, CTA vers quiz</div>
+          <div class="site-layer-desc">Sommeil · Vitalité · Détox · Équilibre femme · La boutique est le résultat du parcours, pas le point d'entrée</div>
+        </div>
+        <div class="site-layer-tag tag-achat">Conversion</div>
+      </div>
+      <div class="site-layer layer-7">
+        <div class="site-layer-num">7</div>
+        <div class="site-layer-info">
+          <div class="site-layer-name">Pages produit + Stripe Payment Links</div>
+          <div class="site-layer-desc">À construire : 1 page par élixir · Hero → Bienfaits → Témoignages → Posologie → Commander · Menu masqué si UTM Taboola</div>
+        </div>
+        <div class="site-layer-tag tag-achat">Vente directe</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 6 — SÉQUENCE EMAIL ═══ -->
+<section class="slide s6" id="slide-5">
+  <div class="slide-header">
+    <div class="slide-header-brand light">Spagybio</div>
+    <div class="slide-header-num light">05 · Email</div>
+  </div>
+  <div class="s6-inner">
+    <div class="slide-label" style="color:var(--gold)">05 — La séquence email prospects (30 jours)</div>
+    <h2 class="slide-title" style="color:var(--parchment)"><em style="color:var(--gold-lt)">70% éducation</em> · 30% conversion.<br>Le produit se vend en 12 à 30 jours.</h2>
+
+    <div class="two-tunnels" style="margin-bottom:24px;">
+      <div class="tunnel-type">
+        <div class="tunnel-type-badge badge-pull">Tunnel Pull — Site</div>
+        <div class="tunnel-type-title">Acheteur impulsif</div>
+        <div class="tunnel-type-sub">Arrive, comprend, achète en 3 minutes. Déjà convaincu ou cherchait la solution. Fenêtre de décision : 30 secondes à 3 minutes.</div>
+      </div>
+      <div class="tunnel-type">
+        <div class="tunnel-type-badge badge-push">Tunnel Push — Email</div>
+        <div class="tunnel-type-title">Acheteur réfléchi</div>
+        <div class="tunnel-type-sub">Besoin d'être éduqué et convaincu. Spagybio contrôle l'ordre et le timing. Fenêtre de décision : 12 à 30 jours.</div>
+      </div>
+    </div>
+
+    <div class="email-timeline">
+      <div class="email-item">
+        <div class="email-card">
+          <div class="email-day">J0</div>
+          <div class="email-type">Bienvenue</div>
+          <div class="email-subject">Votre résultat + guide offert</div>
+          <div class="email-goal">Livrer le PDF · Créer le premier lien · Poser la question d'engagement</div>
+        </div>
+      </div>
+      <div class="email-item">
+        <div class="email-card">
+          <div class="email-day">J2</div>
+          <div class="email-type">Éducation</div>
+          <div class="email-subject">Spagyrie vs herboristerie : la vraie différence</div>
+          <div class="email-goal">Différencier · Poser la légitimité intellectuelle</div>
+        </div>
+      </div>
+      <div class="email-item">
+        <div class="email-card">
+          <div class="email-day">J5</div>
+          <div class="email-type">Storytelling</div>
+          <div class="email-subject">Comment Vincent fabrique vos élixirs</div>
+          <div class="email-goal">Humaniser la marque · Créer l'attachement émotionnel</div>
+        </div>
+      </div>
+      <div class="email-item">
+        <div class="email-card email-star">
+          <div class="email-day">J7</div>
+          <div class="email-type">★ Levier clé</div>
+          <div class="email-subject">30 minutes offertes avec un spécialiste naturopathe</div>
+          <div class="email-goal">Qualifier · Créer une dette de réciprocité forte</div>
+        </div>
+      </div>
+      <div class="email-item">
+        <div class="email-card">
+          <div class="email-day">J12</div>
+          <div class="email-type">Conversion</div>
+          <div class="email-subject">Votre élixir personnalisé selon votre profil</div>
+          <div class="email-goal">Premier CTA produit · Personnalisé selon symptôme</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 7 — NATUROPATHE ═══ -->
+<section class="slide s7" id="slide-6">
+  <div class="slide-header">
+    <div class="slide-header-brand dark">Spagybio</div>
+    <div class="slide-header-num dark">06 · Naturopathe</div>
+  </div>
+  <div class="s7-inner">
+    <div class="slide-label" style="color:var(--sage)">06 — Le levier naturopathe (J7)</div>
+    <h2 class="slide-title dark">Ce n'est plus une vente.<br>C'est <em>une prescription.</em></h2>
+    <div class="natro-grid">
+      <div class="natro-visual">
+        <div>
+          <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-lt);margin-bottom:16px">Le parcours du prospect</div>
+          <div class="natro-flow">
+            <div class="natro-step">
+              <div class="natro-step-icon">📧</div>
+              <div class="natro-step-text">Email J7 reçu — <strong>"30 minutes offertes avec un spécialiste"</strong></div>
+            </div>
+            <div class="natro-step">
+              <div class="natro-step-icon">📅</div>
+              <div class="natro-step-text">Le prospect <strong>prend rendez-vous de son plein gré</strong> via Calendly — aucune pression</div>
+            </div>
+            <div class="natro-step">
+              <div class="natro-step-icon">💬</div>
+              <div class="natro-step-text">Visio 30 min · Le naturopathe <strong>écoute, évalue, conseille</strong> librement</div>
+            </div>
+            <div class="natro-step">
+              <div class="natro-step-icon">🌿</div>
+              <div class="natro-step-text">Recommandation naturelle de <strong>l'élixir adapté</strong> — perçue comme prescription, pas vente</div>
+            </div>
+            <div class="natro-step" style="border:none">
+              <div class="natro-step-icon">💰</div>
+              <div class="natro-step-text">Taux de conversion post-consultation : <strong>objectif 40%+</strong> vs ~5% email seul</div>
+            </div>
+          </div>
+        </div>
+        <div class="natro-quote">"La posture est inversée — c'est le prospect qui vient, pas le commercial qui appelle."</div>
+      </div>
+      <div class="natro-benefits">
+        <div class="natro-benefit">
+          <div class="natro-benefit-icon">🎯</div>
+          <div>
+            <div class="natro-benefit-title">Qualification supérieure au quiz</div>
+            <div class="natro-benefit-desc">30 minutes de conversation révèlent l'historique complet, les tentatives passées, la capacité à dépenser. Le naturopathe sait en 10 minutes si c'est un acheteur sérieux.</div>
+          </div>
+        </div>
+        <div class="natro-benefit">
+          <div class="natro-benefit-icon">🤝</div>
+          <div>
+            <div class="natro-benefit-title">Dette de réciprocité forte</div>
+            <div class="natro-benefit-desc">Un PDF gratuit crée une dette faible. 30 minutes d'attention exclusive d'un expert crée une dette forte. La conversion qui suit n'est plus vécue comme une vente.</div>
+          </div>
+        </div>
+        <div class="natro-benefit">
+          <div class="natro-benefit-icon">🏆</div>
+          <div>
+            <div class="natro-benefit-title">Avantage concurrentiel durable</div>
+            <div class="natro-benefit-desc">Un concurrent avec du budget copie Taboola en 3 mois. Un réseau de naturopathes formés à la spagyrie, intégré dans un tunnel automatisé, prend 1 à 2 ans à construire.</div>
+          </div>
+        </div>
+        <div class="natro-benefit" style="border-left-color:var(--gold)">
+          <div class="natro-benefit-icon">🌍</div>
+          <div>
+            <div class="natro-benefit-title">Scalabilité internationale</div>
+            <div class="natro-benefit-desc">Un naturopathe basé en France consulte en visio un prospect belge, suisse ou québécois sans friction. Le réseau français couvre toute la francophonie.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 8 — ROADMAP ═══ -->
+<section class="slide s8" id="slide-7">
+  <div class="slide-header">
+    <div class="slide-header-brand light">Spagybio</div>
+    <div class="slide-header-num light">07 · Roadmap</div>
+  </div>
+  <div class="s8-inner">
+    <div class="slide-label" style="color:var(--gold)">07 — Roadmap 12 mois</div>
+    <h2 class="slide-title" style="color:var(--parchment)">Chaque phase <em style="color:var(--gold-lt)">construit</em> la suivante.</h2>
+    <div class="roadmap">
+      <div class="roadmap-phase roadmap-phase-1">
+        <div class="phase-period">M1 — M3</div>
+        <div class="phase-title">Fondation & Test</div>
+        <div class="phase-items">
+          <div class="phase-item"><strong>Site live</strong> spagybio.netlify.app</div>
+          <div class="phase-item">Quiz + capture email opérationnel</div>
+          <div class="phase-item"><strong>Taboola test</strong> 600–700€</div>
+          <div class="phase-item">2 articles ponts actifs</div>
+          <div class="phase-item">Séquence email Brevo configurée</div>
+          <div class="phase-item"><strong>1 naturopathe</strong> partenaire · 5 créneaux/semaine</div>
+          <div class="phase-item">Stripe Payment Links</div>
+        </div>
+      </div>
+      <div class="roadmap-phase roadmap-phase-2">
+        <div class="phase-period">M3 — M6</div>
+        <div class="phase-title">Optimisation & Scaling</div>
+        <div class="phase-items">
+          <div class="phase-item">Retargeting Meta (visiteurs Taboola)</div>
+          <div class="phase-item"><strong>Pages produit complètes</strong> par élixir</div>
+          <div class="phase-item">5+ articles ponts · SEO en route</div>
+          <div class="phase-item">Belgique + Suisse simultané</div>
+          <div class="phase-item"><strong>3 naturopathes</strong> partenaires</div>
+          <div class="phase-item">Module abonnement mensuel</div>
+        </div>
+      </div>
+      <div class="roadmap-phase roadmap-phase-3">
+        <div class="phase-period">M6 — M12</div>
+        <div class="phase-title">Diversification</div>
+        <div class="phase-items">
+          <div class="phase-item"><strong>Meta Ads acquisition</strong> · Lookalike</div>
+          <div class="phase-item">SEO page 1 requêtes longue traîne</div>
+          <div class="phase-item">Québec · Adaptation langue</div>
+          <div class="phase-item">Formations Vincent → OPCO</div>
+          <div class="phase-item">Bifurcation séquence email J12</div>
+        </div>
+      </div>
+      <div class="roadmap-phase roadmap-phase-4">
+        <div class="phase-period">M12+</div>
+        <div class="phase-title">Empire</div>
+        <div class="phase-items">
+          <div class="phase-item">Google Ads · YouTube</div>
+          <div class="phase-item"><strong>Spagybio éditeur Taboola</strong></div>
+          <div class="phase-item">Réseau naturopathes étendu</div>
+          <div class="phase-item">Maghreb francophone</div>
+          <div class="phase-item">Qualiopi · Formation pro</div>
+        </div>
+      </div>
+    </div>
+    <div class="kpi-row">
+      <div class="kpi-item">
+        <div class="kpi-value">&lt; 0,35€</div>
+        <div class="kpi-label">CPC cible Taboola</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-value">&lt; 10€</div>
+        <div class="kpi-label">Coût par lead · S3</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-value">&gt; 5%</div>
+        <div class="kpi-label">Taux conversion prospect</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-value">40%+</div>
+        <div class="kpi-label">Conversion post-consultation</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-value">&gt; 30%</div>
+        <div class="kpi-label">Réachat J90</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 9 — PROPOSITION ═══ -->
+<section class="slide s9" id="slide-8">
+  <div class="s9-bg"></div>
+  <div class="s9-content">
+    <div class="s9-label">Ce que je propose</div>
+    <h2 class="s9-title">Une alliance entre<br><em>l'expertise produit</em><br>et l'accélération digitale.</h2>
+    <div class="apports">
+      <div class="apport apport-1">
+        <div class="apport-who">Vincent Lauvergne · Ce qui existe</div>
+        <div class="apport-items">
+          <div class="apport-item"><strong>25 ans de savoir-faire</strong> spagyrique unique en France</div>
+          <div class="apport-item"><strong>30+ élixirs</strong> créés et éprouvés</div>
+          <div class="apport-item"><strong>Story de marque</strong> authentique et puissante</div>
+          <div class="apport-item"><strong>2 ouvrages publiés</strong> · Crédibilité d'auteur</div>
+          <div class="apport-item"><strong>Réseau naturopathes</strong> dans le milieu des médecines douces</div>
+        </div>
+      </div>
+      <div class="apport apport-2">
+        <div class="apport-who">Ce que j'apporte · Investisseur opérationnel</div>
+        <div class="apport-items">
+          <div class="apport-item"><strong>Stratégie digitale complète</strong> — tunnel, contenu, email, acquisition</div>
+          <div class="apport-item"><strong>Site Spagybio refait</strong> — live sur spagybio.netlify.app</div>
+          <div class="apport-item"><strong>Budget test Taboola</strong> 600–700€ — validation du système</div>
+          <div class="apport-item"><strong>Pilotage IA quotidien</strong> — contenu, SEO, emails via Claude</div>
+          <div class="apport-item"><strong>Temps plein</strong> · Développement commercial structuré</div>
+        </div>
+      </div>
+    </div>
+    <div class="s9-next">
+      <div class="s9-next-title">Les prochaines étapes concrètes</div>
+      <div class="s9-steps">
+        <div class="s9-step"><span>1</span>Valider les prix des élixirs pour Stripe</div>
+        <div class="s9-step"><span>2</span>Créer le compte Realize (Taboola)</div>
+        <div class="s9-step"><span>3</span>Identifier le premier naturopathe partenaire</div>
+        <div class="s9-step"><span>4</span>Lancer le test 600€ · J1 dans 2 semaines</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<script>
+// Scroll to slide
+function scrollToSlide(index) {
+  const slide = document.getElementById('slide-' + index);
+  if (slide) slide.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Update active dot on scroll
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.nav-dot');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      const index = parseInt(id.replace('slide-', ''));
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+    }
+  });
+}, { threshold: 0.5 });
+
+slides.forEach(slide => observer.observe(slide));
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const active = [...dots].findIndex(d => d.classList.contains('active'));
+  if (e.key === 'ArrowDown' || e.key === 'ArrowRight') scrollToSlide(Math.min(active + 1, slides.length - 1));
+  if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') scrollToSlide(Math.max(active - 1, 0));
+});
+</script>
+</body>
+</html>
